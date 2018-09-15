@@ -1,0 +1,8 @@
+.Jumbo {
+  background-color: aqua;
+  height: 60vh;
+  background-image: url(../../assets/banner.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}

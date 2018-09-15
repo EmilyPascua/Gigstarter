@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import styles from './Homepage.css';
+import Navbar from '../../components/Navbar/Navbar';
+import Jumbo from '../../components/Jumbotron/Jumbotron';
 
 class Homepage extends Component {
   render() {
     return (
-      <div className={styles.Homepage}>
-        <h1>Gigstarter</h1>
-        <ul>
-          <li>Home</li>
-          <li>Gigs</li>
-          <li>Login</li>
-        </ul>
+      <div>
+        <Navbar />
+        <Jumbo />
       </div>
     );
   }
