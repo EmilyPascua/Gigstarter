@@ -1,8 +1,16 @@
 .Jumbo {
   background-color: aqua;
-  height: 60vh;
-  background-image: url(../../assets/banner.jpeg);
+  height: 100vh;
+  background-image: url(../../assets/back.svg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
+  background-position: left top;
+  background-size: 100vw;
+  top: 0;
+}
+.Container {
+  width: 500px;
+  margin-left: 50px;
+  margin-top: 80px;
+  font-family: 'Montserrat', sans-serif;
 }

@@ -5,61 +5,76 @@ import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import ListGroup from 'react-bootstrap/lib/ListGroup';
 import Form from 'react-bootstrap/lib/Form';
+import searchicon from '../../assets/search.svg';
+import envelope from '../../assets/envelope.svg';
+import growth from '../../assets/growth.svg';
+import bag from '../../assets/money-bag.svg';
+import shop from '../../assets/shop.svg';
+import presentation from '../../assets/presentation.svg';
 
 const Sections = () => {
   return (
     <div>
       <Container className={styles.Sec1}>
-        <Row>
-          <Col>The Best Career Building Platform</Col>
-          <Col>
-            GigStarter is aimed to provide professional experiences within the
-            field these students are studying. Our team has an extensive
-            customer-interview record and 87% have claimed they feel unprepared
-            for the workforce due to their lack of experience outside of the
-            classroom.
+        {/* <img className={styles.bg1} src={bg1} alt="bg1" /> */}
+        <Row className={styles.Sec1Row1}>
+          <Col className={styles.Bodyone} xs={6}>
+            <h1>The Best Career Building Platform</h1>
+            <p>
+              GigStarter is aimed to provide professional experiences within the
+              field these students are studying. Our team has an extensive
+              customer-interview record and 87% have claimed they feel
+              unprepared for the workforce due to their lack of experience
+              outside of the classroom.
+            </p>
           </Col>
-        </Row>
-        <Row>
-          <Col>
-            Step 1 Scroll through hundreds of gig opportunities offered on
-            Gigstarter
+          <Col className={styles.Sec1Col1} xs={2}>
+            <img src={searchicon} alt="search" width="64px" />
+            <h3>Step 1</h3>
+            <p>
+              Scroll through hundreds of gig opportunities offered on Gigstarter
+            </p>
           </Col>
-          <Col>
-            Step 2 If you show interest in a gig, contact the employer to
-            discover the details of the job
+          <Col className={styles.Sec1Col2} xs={2}>
+            <img src={envelope} alt="envelope" width="64px" />
+            <h3>Step 2</h3>
+            <p>
+              If you show interest in a gig, contact the employer to discover
+              the details of the job
+            </p>
           </Col>
-          <Col>
-            Step 3 Get paid for the work you have done! Aside from the extra
-            money, you have now expanded your resume in a positive &
-            professional direction
+          <Col className={styles.Sec1Col3} xs={2}>
+            <img src={growth} alt="money" width="64px" />
+            <h3>Step 3</h3>
+            <p>
+              Get paid for the work you have done! Aside from the extra money,
+              you have now expanded your resume in a positive & professional
+              direction
+            </p>
           </Col>
         </Row>
       </Container>
       <Container className={styles.Sec2}>
-        <Row>
-          <Col>
+        <Row className={styles.Sec2Row1}>
+          <Col className={styles.Sec2Col1}>
+            <img src={bag} alt="bag" width="64px" />
+            <p>Provide students with experience & cash</p>
+          </Col>
+          <Col className={styles.Sec2Col2}>
+            <img src={shop} alt="shop" width="64px" />
+            <p>Provides business owners a helping hand</p>
+          </Col>
+          <Col className={styles.Sec2Col3}>
+            <img src={presentation} alt="business" width="64px" />
+            <p>Increases the economic development of Los Angeles</p>
+          </Col>
+          <Col className={styles.Sec2Col4} xs={6}>
             <h1>The Big Picture</h1>
             <p>
               Providing students with practical experience would not be possible
               without the large scope of work provided by business owners across
               Los Angeles. Every transaction on Gigstarter does all of 3 things
             </p>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-            Step 1 Scroll through hundreds of gig opportunities offered on
-            Gigstarter
-          </Col>
-          <Col>
-            Step 2 If you show interest in a gig, contact the employer to
-            discover the details of the job
-          </Col>
-          <Col>
-            Step 3 Get paid for the work you have done! Aside from the extra
-            money, you have now expanded your resume in a positive &
-            professional direction
           </Col>
         </Row>
       </Container>

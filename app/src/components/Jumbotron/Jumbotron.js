@@ -7,7 +7,7 @@ const Jumbo = () => {
   return (
     <div>
       <Jumbotron fluid className={styles.Jumbo}>
-        <Container>
+        <Container className={styles.Container}>
           <h1>Welcome to GigStarter</h1>
           <p>A brighter future is just 1 click away</p>
         </Container>
