@@ -1,0 +1,85 @@
+.Sec1 {
+  height: 90vh;
+  border-bottom: 2px dotted rgb(230, 230, 230);
+}
+/* .bg1 {
+  float: left;
+  position: absolute;
+  left: 10px;
+  width: 50vw;
+} */
+.Sec1Row1 {
+  font-family: 'Montserrat', sans-serif;
+}
+.Sec1Col1 {
+  margin-top: 20%;
+}
+.Sec1Col2 {
+  margin-top: 20%;
+}
+.Sec1Col3 {
+  margin-top: 20%;
+}
+
+.Bodyone {
+  color: white;
+  background-image: url('../../assets/greenind.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 80vh;
+  float: left;
+  margin-top: 5%;
+}
+.Bodyone h1 {
+  margin-top: 30%;
+  margin-left: 5%;
+  width: 80%;
+}
+.Bodyone p {
+  width: 80%;
+  margin-left: 5%;
+}
+.Sec2 {
+  height: 90vh;
+  border-bottom: 2px dotted rgb(230, 230, 230);
+}
+.Sec2Row1 {
+  font-family: 'Montserrat', sans-serif;
+}
+.Sec2Col1 {
+  margin-top: 25%;
+}
+.Sec2Col2 {
+  margin-top: 25%;
+}
+.Sec2Col3 {
+  margin-top: 25%;
+}
+.Sec2Col4 {
+  color: white;
+  background-image: url('../../assets/orangeind.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 80vh;
+  float: right;
+  margin-top: 5%;
+  margin-left: 50px;
+}
+.Sec2Col4 h1 {
+  margin-top: 40%;
+  margin-left: 7%;
+  width: 80%;
+}
+.Sec2Col4 p {
+  margin-left: 7%;
+  width: 80%;
+}
+.Sec3 {
+  height: 90vh;
+}
+.Sec4 {
+  height: 90vh;
+}
+.Sec5 {
+  height: 80vh;
+}
