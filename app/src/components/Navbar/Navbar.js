@@ -3,10 +3,10 @@ import styles from './Navbar.css';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import Nav from 'react-bootstrap/lib/Nav';
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <div>
-      <Navbar expand="lg" fixed="top" className={styles.Nav}>
+      <Navbar expand="lg" fixed="top" bg="dark" variant="dark">
         <Navbar.Brand href="#home">Gigstarter</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
