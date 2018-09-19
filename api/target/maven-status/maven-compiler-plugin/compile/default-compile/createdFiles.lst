@@ -1,2 +1,7 @@
-gigstarter\api\Controllers\SampleController.class
+gigstarter\api\Controllers\UserController.class
+gigstarter\api\Security\AccountCredentials.class
+gigstarter\api\Services\TokenAuthenticationService.class
+gigstarter\api\Security\JWTAuthenticationFilter.class
+gigstarter\api\Security\JWTLoginFilter.class
 gigstarter\api\MainApplicationClass.class
+gigstarter\api\Security\WebSecurityConfig.class
