@@ -1,2 +1,6 @@
-C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\MainApplicationClass.java
-C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\Controllers\SampleController.java
+/Users/calvin/Documents/gigstarter/Gigstarter/api/src/main/java/com/example/demo/controller/JobController.java
+/Users/calvin/Documents/gigstarter/Gigstarter/api/src/main/java/com/example/demo/repository/JobRepository.java
+/Users/calvin/Documents/gigstarter/Gigstarter/api/src/main/java/com/example/demo/DemoApplication.java
+/Users/calvin/Documents/gigstarter/Gigstarter/api/src/main/java/com/example/demo/exception/ResourceNotFoundException.java
+/Users/calvin/Documents/gigstarter/Gigstarter/api/src/main/java/com/example/demo/model/Job.java
+/Users/calvin/Documents/gigstarter/Gigstarter/api/src/main/java/com/example/demo/model/AuditModel.java
