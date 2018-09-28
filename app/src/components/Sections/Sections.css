@@ -75,11 +75,46 @@
   width: 80%;
 }
 .Sec3 {
-  height: 90vh;
+  border-bottom: 2px dotted rgb(230, 230, 230);
+  font-family: 'Montserrat', sans-serif;
+}
+.Sec3Row1 {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.Sec3ListG{
+  margin-top: 35px;
 }
 .Sec4 {
-  height: 90vh;
+  /* border-bottom: 2px dotted rgb(230, 230, 230); */
+  margin-top: 10%;
+  padding-bottom: 10%;
+  font-family: 'Montserrat', sans-serif;
+  
 }
 .Sec5 {
-  height: 80vh;
+
+  font-family: 'Montserrat', sans-serif;
+  background-image: url(../../assets/bottomback.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-attachment: fixed;
+  background-position: left top;
+  background-size: 100vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
+
+.Sec5Card1{
+  width: 30vw;
+  margin: 5%;
+  color: white;
+}
+.Sec5Card2{
+  width: 40vw;
+  margin: 5%;
+  color: white;
+}
+
