@@ -1,4 +1,4 @@
-package gigstarter.api.Security;
+package gigstarter.api.security;
 
 public class AccountCredentials {
 

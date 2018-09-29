@@ -1,4 +1,4 @@
-package gigstarter.api.Security;
+package gigstarter.api.security;
 
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;
@@ -10,7 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-import gigstarter.api.Services.*;
+import gigstarter.api.service.*;
 
 public class JWTAuthenticationFilter extends GenericFilterBean {
 

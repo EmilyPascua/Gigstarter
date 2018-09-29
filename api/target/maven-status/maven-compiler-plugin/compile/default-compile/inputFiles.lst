@@ -1,2 +1,12 @@
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\security\AccountCredentials.java
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\controller\JobController.java
 C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\MainApplicationClass.java
-C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\Controllers\SampleController.java
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\security\WebSecurityConfig.java
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\service\TokenAuthenticationService.java
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\model\AuditModel.java
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\model\Job.java
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\security\JWTLoginFilter.java
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\controller\UserController.java
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\exception\ResourceNotFoundException.java
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\security\JWTAuthenticationFilter.java
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\repository\JobRepository.java

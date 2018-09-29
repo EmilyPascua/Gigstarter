@@ -1,7 +1,7 @@
-package gigstarter.api.Security;
+package gigstarter.api.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import gigstarter.api.Services.TokenAuthenticationService;
+import gigstarter.api.service.TokenAuthenticationService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
