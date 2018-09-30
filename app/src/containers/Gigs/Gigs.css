@@ -3,7 +3,12 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
 
+.ContainerBottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .ListOfGigs{
@@ -14,34 +19,29 @@
 
 }
 
-
-.Item{
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-
-  flex-direction: row;
-  margin: 10px;
-}
-
-.Test{
-  width:1000px;
-}
-
-.Gigs {
+  Gigs {
     width: 100vw;
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
   }
 
-  .GigTitle{
+  .GigTitleSm{
     font-weight: bold;
     padding-top: 25px;
     padding-left: 25px;
     text-align: left;
     font-size: 20px;
   }
+  .GigTitleLg{
+    font-weight: bold;
+    padding-left: 25px;
+    text-align: left;
+    font-size: 30px;
+  }
 
+  .GigDescription{
+    text-align: justify;
+  }
   .GigContent{
     padding: 25px;
     text-align: left;
@@ -61,6 +61,11 @@
   padding-top: 30px;
 }
 
+.BottomContent{
+  width:1000px;
+  padding-top: 30px;
+}
+
 .GigsButton{
   margin-top: 3%;
   align-content: left;
@@ -68,4 +73,12 @@
 
 .ContentBanner{
   margin-top: 5%;
+}
+
+.Item{
+  margin: 5px;
+}
+
+.GigList{
+  margin-bottom: 50px;
 }

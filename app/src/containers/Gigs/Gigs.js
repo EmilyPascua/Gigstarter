@@ -19,7 +19,7 @@ class Gigs extends Component {
           <div className={styles.TopBanner}>
             <Form>
             <Row className="show-grid">
-            <Col lg={6} md={1}>
+            <Col lg={6} md={6}>
                 <Form.Group controlId="formKeyword">
                   <div align="left">
                     <h3><b>Find Gig</b></h3>
@@ -30,7 +30,7 @@ class Gigs extends Component {
                   <Form.Control />
                   </Form.Group>
             </Col>
-            <Col lg={6} md={1}>
+            <Col lg={6} md={6}>
                 <Form.Group controlId="formLocation">
                 <div align="left">
                   <h3><b>Location</b></h3>
@@ -46,77 +46,71 @@ class Gigs extends Component {
                   </Button>
                 </div>
             </Col>
-            
             </Row>
             </Form>
           </div>
         </div>
-         <div className={styles.Item}>
-            <Row>
-              <Card className={styles.Test}>
-                <div className={styles.GigTitle}>Event Cook</div>
-                <div className={styles.Employer}>Posted by Eric Brady</div>
-                <div className={styles.GigContent}>
-                <i class="fa fa-dollar"></i> 300<br></br>
-                <i class="fa fa-suitcase"></i> One-Day Gig <br></br>
-                <i class="fa fa-map-marker"></i> 2199 Angeles Avenue <br></br>
-                </div>
-              </Card>
-            </Row>
-          </div>
-          <div className={styles.Item}>
-            <Row>
-              <Card className={styles.Test}>
-                <div className={styles.GigTitle}>Web Design</div>
-                <div className={styles.Employer}>Posted by Roger Zhao</div>
-                <div className={styles.GigContent}>
-                <i class="fa fa-dollar"></i> 200<br></br>
-                <i class="fa fa-suitcase"></i> One-Week Gig <br></br>
-                <i class="fa fa-map-marker"></i> 1022 Alhambra Road <br></br>
-                </div>
-              </Card>
-            </Row>
-          </div>
-          <div className={styles.Item}>
-            <Row>
-              <Card className={styles.Test}>
-                <div className={styles.GigTitle}>Community Fundraiser</div>
-                <div className={styles.Employer}>Posted by GetStarted.com</div>
-                <div className={styles.GigContent}>
-                <i class="fa fa-dollar"></i> 50<br></br>
-                <i class="fa fa-suitcase"></i> One-Day Gig <br></br>
-                <i class="fa fa-map-marker"></i> 5022 Random Avenue <br></br>
-                </div>
-              </Card>
-            </Row>
-          </div>
-          <div className={styles.Item}>
-            <Row>
-              <Card className={styles.Test}>
-                <div className={styles.GigTitle}>Event Cook</div>
-                <div className={styles.Employer}>Posted by Eric Brady</div>
-                <div className={styles.GigContent}>
-                <i class="fa fa-dollar"></i> 300<br></br>
-                <i class="fa fa-suitcase"></i> One-Day Gig <br></br>
-                <i class="fa fa-map-marker"></i> 2199 Angeles Avenue <br></br>
-                </div>
-              </Card>
-            </Row>
-          </div>
-          <div className={styles.Item}>
 
-          {/*Test Pagnitation that doesn't work.*/}
-          <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </nav></div>
+
+        <div className={styles.ContainerBottom}>
+          <div className={styles.BottomContent}>
+            <Row className="show-grid">
+            <Col lg={6} md={6}>
+            <hr/>
+            Search Results: 50
+            <hr/><div className={styles.GigList}>
+                <Card className={styles.Item}>
+                  <div className={styles.GigTitleSm}>Event Cook</div>
+                  <div className={styles.Employer}>Posted by Eric Brady</div>
+                  <div className={styles.GigContent}>
+                  <span><i class="fa fa-dollar"></i> 300 &nbsp;&nbsp;
+                  <i class="fa fa-suitcase"></i> One-Day Gig &nbsp;&nbsp;
+                  <i class="fa fa-map-marker"></i> 2199 Angeles Avenue</span>
+                  </div>
+                </Card>
+                <Card className={styles.Item}>
+                  <div className={styles.GigTitleSm}>Event Cook</div>
+                  <div className={styles.Employer}>Posted by Eric Brady</div>
+                  <div className={styles.GigContent}>
+                  <span><i class="fa fa-dollar"></i> 300 &nbsp;&nbsp;
+                  <i class="fa fa-suitcase"></i> One-Day Gig &nbsp;&nbsp;
+                  <i class="fa fa-map-marker"></i> 2199 Angeles Avenue</span>
+                  </div>
+                </Card>
+                <Card className={styles.Item}>
+                  <div className={styles.GigTitleSm}>Event Cook</div>
+                  <div className={styles.Employer}>Posted by Eric Brady</div>
+                  <div className={styles.GigContent}>
+                  <span><i class="fa fa-dollar"></i> 300 &nbsp;&nbsp;
+                  <i class="fa fa-suitcase"></i> One-Day Gig &nbsp;&nbsp;
+                  <i class="fa fa-map-marker"></i> 2199 Angeles Avenue</span>
+                  </div>
+                </Card>
+                <Card className={styles.Item}>
+                  <div className={styles.GigTitleSm}>Event Cook</div>
+                  <div className={styles.Employer}>Posted by Eric Brady</div>
+                  <div className={styles.GigContent}>
+                  <span><i class="fa fa-dollar"></i> 300 &nbsp;&nbsp;
+                  <i class="fa fa-suitcase"></i> One-Day Gig &nbsp;&nbsp;
+                  <i class="fa fa-map-marker"></i> 2199 Angeles Avenue</span>
+                  </div>
+                </Card>
+                </div>
+            </Col>
+            <Col lg={6} md={6}>
+                 <hr/>
+                  <div className={styles.GigTitleLg}>Event Cook</div>
+                  <div className={styles.Employer}>Posted by Eric Brady</div>
+                  <hr/>
+                  <p className={styles.GigDescription}>Our local organization is conducting a week-long fundraiser to raise as much money as possible to prepare for the music festival happening this weekend. We require a minimum of 2 hours per day for the week. The gig pays $300 in total.</p>
+                  <div className={styles.GigMap}></div>
+            
+            </Col>
+            </Row>
           </div>
-    );
+        </div>
+        </div>
+     );
   }
 }
 
