@@ -1,0 +1,28 @@
+.Login {
+  background-image: url(../../../assets/bottomback.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-attachment: fixed;
+  background-position: left top;
+  background-size: 100vw;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.Container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Card2 {
+  margin-top: 15vh;
+  width: 50vw;
+  height: 80vh;
+  overflow: scroll
+}
+
+.SignButton {
+  margin-top: 10px;
+}
