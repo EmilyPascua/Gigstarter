@@ -1,7 +1,7 @@
 .Jumbo {
-  background-color: aqua;
+  background-color: white;
   height: 100vh;
-  background-image: url(../../assets/back.svg);
+  background-image: url(../../assets/back2.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: left top;
@@ -9,12 +9,26 @@
   top: 0;
 }
 .Container {
-  width: 500px;
-  margin-left: 50px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 80px;
   font-family: 'Montserrat', sans-serif;
+  color: white;
 }
 
 .des {
   font-family: 'Open Sans', sans-serif;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+
+.title {
+  font-size: 4em;
+}
+
+.Button1 {
+  margin-right: 10px;
 }

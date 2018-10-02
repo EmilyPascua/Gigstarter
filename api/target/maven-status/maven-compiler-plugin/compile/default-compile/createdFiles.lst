@@ -1,2 +1,6 @@
-gigstarter\api\Controllers\SampleController.class
-gigstarter\api\MainApplicationClass.class
+com/example/demo/DemoApplication.class
+com/example/demo/exception/ResourceNotFoundException.class
+com/example/demo/controller/JobController.class
+com/example/demo/model/Job.class
+com/example/demo/model/AuditModel.class
+com/example/demo/repository/JobRepository.class

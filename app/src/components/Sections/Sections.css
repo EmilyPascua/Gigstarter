@@ -86,8 +86,8 @@
   margin-top: 35px;
 }
 .Sec4 {
-  /* border-bottom: 2px dotted rgb(230, 230, 230); */
-  margin-top: 10%;
+  border-bottom: 2px dotted rgb(230, 230, 230);
+  margin-top: 5%;
   padding-bottom: 10%;
   font-family: 'Montserrat', sans-serif;
   
@@ -117,4 +117,75 @@
   margin: 5%;
   color: white;
 }
+.Sec6 {
+  /* border-bottom: 2px dotted rgb(230, 230, 230); */
+  margin-top: 5%;
+  padding-bottom: 10%;
+  font-family: 'Montserrat', sans-serif;
+  
+}
 
+.SignCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.Sign1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.Sign1 img {
+  margin-bottom: 25px;
+}
+
+.Sign2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.Sign2 img {
+  margin-bottom: 25px;
+}
+
+.SignMiddle {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 64px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  color: #d7d7d7;
+}
+
+.Sec7 {
+  background-color: black;
+  color: white;
+  height: 40vh;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.FooterTop {
+  padding-top: 25px;
+}
+
+.FooterBottom {
+  text-align: left;
+  font-size: 14px;
+  margin-top: 5vh;
+}
+
+.SocRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.SocCont {
+  margin: 10px;
+}
+
+.Sec7Cont {
+  height: 100%;
+}
