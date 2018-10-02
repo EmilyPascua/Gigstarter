@@ -7,12 +7,20 @@ import Col from 'react-bootstrap/lib/Col';
 import ListGroup from 'react-bootstrap/lib/ListGroup';
 import Form from 'react-bootstrap/lib/Form';
 import Card from 'react-bootstrap/lib/Card';
+import Button from 'react-bootstrap/lib/Button';
 import searchicon from '../../assets/search.svg';
 import envelope from '../../assets/envelope.svg';
 import growth from '../../assets/growth.svg';
 import bag from '../../assets/money-bag.svg';
 import shop from '../../assets/shop.svg';
 import presentation from '../../assets/presentation.svg';
+import employee from '../../assets/employee.svg';
+import businessman from '../../assets/businessman.svg';
+import fb from '../../assets/social/facebook.svg';
+import twit from '../../assets/social/twitter.svg';
+import insta from '../../assets/social/instagram.svg';
+import linkedin from '../../assets/social/linkedin.svg';
+
 
 const Sections = () => {
   return (
@@ -118,9 +126,23 @@ const Sections = () => {
           </Col>
         </Row>
       </Container>
+      <div id="Sec6" />
+      <div className={styles.Sec6}>
+        <h1>Sign up</h1>
+        <p>Heard enough? Let's kickstart your career by enrolling in our Gigstarter economy!</p>
+        <div className={styles.SignCont}>
+          <div className={styles.Sign1}>
+            <img src={businessman} alt="businessman" width="256px" />
+            <Button href="forhire" variant="success">I am looking for a Gig.</Button>
+          </div>
+          <div className={styles.SignMiddle}>OR</div>
+          <div className={styles.Sign2}>
+            <img src={employee} alt="work" width="256px" />
+            <Button href="hiring" variant="primary">I am looking for Talent.</Button>
+          </div>
+        </div>
+      </div>
       <div className={styles.Sec5}>
-
-
         <Card bg="secondary" border="success" className={styles.Sec5Card1}>
           <Card.Header><h1>Reach Us</h1></Card.Header>
           <Card.Body>
@@ -152,9 +174,35 @@ const Sections = () => {
             </Form>
           </Card.Body>
         </Card>
-
-
-
+      </div>
+      <div className={styles.Sec7} id="Sec7">
+        <Container className={styles.Sec7Cont}>
+          <Row className={styles.FooterTop}>
+            <Col className={styles.SocRow}>
+              <div className={styles.SocCont}>
+                <img src={fb} alt="social" width="64px" />
+                <p>Gigstarter</p>
+              </div>
+              <div className={styles.SocCont}>
+                <img src={twit} alt="social" width="64px" />
+                <p>#Gigstarter</p>
+              </div>
+              <div className={styles.SocCont}>
+                <img src={insta} alt="social" width="64px" />
+                <p>@Gigstarter</p>
+              </div>
+              <div className={styles.SocCont}>
+                <img src={linkedin} alt="social" width="64px" />
+                <p>Gigstarter</p>
+              </div>
+            </Col>
+            <Col style={{ textAlign: "right" }}> ABOUT US</Col>
+          </Row>
+          <Row className={styles.FooterBottom}>
+            <Col>© 2018 Gigstarter Inc.</Col>
+            <Col style={{ textAlign: "right" }}>STUFF</Col>
+          </Row>
+        </Container>
       </div>
     </div>
   );

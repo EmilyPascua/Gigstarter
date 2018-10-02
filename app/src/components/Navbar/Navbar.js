@@ -14,7 +14,8 @@ const NavBar = (props) => {
           <Nav>
             <Nav.Link href="about">About Us</Nav.Link>
             <Nav.Link href="gigs">Gigs</Nav.Link>
-            <Nav.Link href="login">Login</Nav.Link>
+            <Nav.Link href="forhire"><div className={styles.ForHire}>For Hire</div></Nav.Link>
+            <Nav.Link href="hiring"><div className={styles.Hire}>Hiring</div></Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

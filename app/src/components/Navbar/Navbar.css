@@ -5,3 +5,26 @@
   color: white;
 }
 
+.ForHire {
+  border: 1px solid rgb(83, 164, 81);
+  padding: 0 5px 0 5px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.ForHire:hover {
+  color:white;
+  background-color: rgb(83, 164, 81);
+}
+
+.Hire {
+  border: 1px solid rgb(71, 125, 243);
+  padding: 0 5px 0 5px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.Hire:hover {
+  color:white;
+  background-color: rgb(71, 125, 243);
+}

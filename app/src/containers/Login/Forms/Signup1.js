@@ -53,7 +53,7 @@ const SignOne = props => {
   <Form.Group id="formGridCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group>
-
+  <Button variant="danger" onClick={props.param} style={{marginRight:10}}>Back</Button>
   <Button variant="primary" type="submit">
     Submit
   </Button>
