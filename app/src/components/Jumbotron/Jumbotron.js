@@ -3,7 +3,7 @@ import styles from './Jumbotron.css';
 import Jumbotron from 'react-bootstrap/lib/Jumbotron';
 import Container from 'react-bootstrap/lib/Container';
 import Button from 'react-bootstrap/lib/Button';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { animateScroll as scroller } from 'react-scroll'
 
 
 const Jumbo = ({ isVisible }) => {

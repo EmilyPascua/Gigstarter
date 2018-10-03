@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import styles from './ForHire.css';
 import Navbar from "../../../components/Navbar/Navbar";
 import Card from "react-bootstrap/lib/Card";
 import Button from "react-bootstrap/lib/Button";
-import Form from "react-bootstrap/lib/Form";
 import LoginOne from "./../Forms/Login1";
 import SignOne from "./../Forms/Signup1";
 

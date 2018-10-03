@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import styles from './Hiring.css';
 import Navbar from "../../../components/Navbar/Navbar";
 import Card from "react-bootstrap/lib/Card";
 import Button from "react-bootstrap/lib/Button";
-import Form from "react-bootstrap/lib/Form";
 import LoginTwo from "./../Forms/Login2";
 import SignTwo from "./../Forms/Signup2";
 

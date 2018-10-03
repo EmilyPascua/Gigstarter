@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import styles from './Homepage.css';
 import Navbar from '../../components/Navbar/Navbar';
 import Jumbo from '../../components/Jumbotron/Jumbotron';
 import Sections from '../../components/Sections/Sections';
