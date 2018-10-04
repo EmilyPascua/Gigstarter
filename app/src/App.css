@@ -1,7 +1,4 @@
 .App {
   text-align: center;
-}
-
-* {
-  outline: 1px solid red;
+  overflow: hidden;
 }
