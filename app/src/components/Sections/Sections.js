@@ -159,15 +159,21 @@ const Sections = () => {
         <div className={styles.SignCont}>
           <div className={styles.Sign1}>
             <img src={businessman} alt="businessman" width="256px" />
-            <Button href="forhire" variant="success">
+            <Button className={styles.SignBut1} href="forhire" variant="success">
               I am looking for a Gig.
+            </Button>
+            <Button className={styles.SignBut1m} href="forhire" variant="success">
+              For Hire
             </Button>
           </div>
           <div className={styles.SignMiddle}>OR</div>
           <div className={styles.Sign2}>
             <img src={employee} alt="work" width="256px" />
-            <Button href="hiring" variant="primary">
+            <Button className={styles.SignBut2} href="hiring" variant="primary">
               I am looking for Talent.
+            </Button>
+            <Button className={styles.SignBut2m} href="hiring" variant="primary">
+              Hiring
             </Button>
           </div>
         </div>
@@ -233,11 +239,11 @@ const Sections = () => {
                 <p>Gigstarter</p>
               </div>
             </Col>
-            <Col style={{ textAlign: 'right' }}> ABOUT US</Col>
+            <Col className={styles.FooterAbout} style={{ textAlign: 'right' }}> ABOUT US</Col>
           </Row>
           <Row className={styles.FooterBottom}>
             <Col>© 2018 Gigstarter Inc.</Col>
-            <Col style={{ textAlign: 'right' }}>STUFF</Col>
+            <Col className={styles.FooterStuff} style={{ textAlign: 'right' }}>STUFF</Col>
           </Row>
         </Container>
       </div>

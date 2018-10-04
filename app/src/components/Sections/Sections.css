@@ -140,6 +140,10 @@
   flex-direction: column;
 }
 
+.SignBut1m {
+  display: none;
+}
+
 .Sign1 img {
   margin-bottom: 25px;
 }
@@ -147,6 +151,10 @@
 .Sign2 {
   display: flex;
   flex-direction: column;
+}
+
+.SignBut2m {
+  display: none;
 }
 
 .Sign2 img {
@@ -199,9 +207,25 @@
   }
   .Sign1 a {
     width: 100px;
+    content: 'For Hire';
+  }
+  .SignBut1m {
+    display: flex;
+    justify-content: center;
+  }
+  .SignBut1 {
+    display: none;
   }
   .Sign2 img {
     width: 100px;
+    content: 'Hiring';
+  }
+  .SignBut2 {
+    display: none;
+  }
+  .SignBut2m {
+    display: flex;
+    justify-content: center;
   }
   .Sign2 a {
     width: 100px;
@@ -347,5 +371,17 @@
   }
   .Sec5Card2 {
     width: 90vw;
+  }
+  .SocCont img{
+    width: 10vw;
+  }
+  .SocCont p{
+    font-size: .7em;
+  }
+  .FooterAbout {
+    display: none;
+  }
+  .FooterStuff {
+    display: none;
   }
 }
