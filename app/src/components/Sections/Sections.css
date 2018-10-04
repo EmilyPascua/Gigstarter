@@ -212,4 +212,7 @@
   .Sec1Col3 {
     padding-right: 0px;
   }
+  .Sec4Image img {
+    width: 50px;
+  }
 }

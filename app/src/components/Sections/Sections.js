@@ -115,13 +115,13 @@ const Sections = () => {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col className={styles.Sec4Image}>
             <img src="https://via.placeholder.com/300x300" alt="placeholder" />
           </Col>
-          <Col>
+          <Col className={styles.Sec4Image}>
             <img src="https://via.placeholder.com/300x300" alt="placeholder" />
           </Col>
-          <Col>
+          <Col className={styles.Sec4Image}>
             <img src="https://via.placeholder.com/300x300" alt="placeholder" />
           </Col>
         </Row>
