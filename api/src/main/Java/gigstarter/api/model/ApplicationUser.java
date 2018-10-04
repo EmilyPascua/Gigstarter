@@ -1,17 +1,36 @@
 package gigstarter.api.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.validator.constraints.Length;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 @Entity
-public class ApplicationUser {
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class ApplicationUser {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotNull
+    @Length(min = 6)
     private String email;
+
+    @NotNull
+    @Length(min = 6)
     private String password;
+
+    @Column(name = "enabled")
+    private boolean enabled;
+
+    private String firstName;
+    private String lastName;
+
+    public ApplicationUser(){
+        enabled = false;
+    }
+
     public long getId() {
         return id;
     }

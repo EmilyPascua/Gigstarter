@@ -1,7 +1,8 @@
 package gigstarter.api.controller;
 
-import gigstarter.api.model.ApplicationUser;
-import gigstarter.api.repository.ApplicationUserRepository;
+import gigstarter.api.model.EmployerUser;
+import gigstarter.api.model.StudentUser;
+import gigstarter.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,14 +15,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class UserController {
 
     @Autowired
-    private ApplicationUserRepository applicationUserRepository;
+    private UserService userService;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @PostMapping("/sign-up")
-    public void signUp(@RequestBody ApplicationUser user) {
+    @PostMapping("/sign-up/student")
+    public String signUpStudent(@RequestBody StudentUser user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        applicationUserRepository.save(user);
+        return Boolean.toString(userService.createStudentUser(user));
+    }
+
+    @PostMapping("/sign-up/employer")
+    public String signUpEmployer(@RequestBody EmployerUser user) {
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        return Boolean.toString(userService.createEmployerUser(user));
     }
 }
