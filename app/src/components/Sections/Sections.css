@@ -207,11 +207,11 @@
     width: 100px;
   }
   .Video {
-    width: 90vw;;
+    width: 90vw;
   }
   .Sec1 {
     max-width: 100vw;
-    height: auto;;
+    height: auto;
   }
   .Sec1Row1 {
     display: flex;
@@ -224,7 +224,7 @@
     width: 25vw;
   }
   .Bodyone {
-    max-width: 100vw;;
+    max-width: 100vw;
     color: black;
     background-image: none;
     height: auto;
@@ -261,7 +261,7 @@
   }
 
   .Sec3 {
-    height: 110vh;;
+    height: 110vh;
   }
 
   .VideoCont {
