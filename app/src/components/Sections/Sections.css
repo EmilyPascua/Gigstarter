@@ -189,3 +189,27 @@
 .Sec7Cont {
   height: 100%;
 }
+
+@media (max-width: 575.98px) {
+  .Sign1 img {
+    width: 100px;
+  }
+  .Sign1 a {
+    width: 100px;
+  }
+  .Sign2 img {
+    width: 100px;
+  }
+  .Sign2 a {
+    width: 100px;
+  }
+  .Video {
+    width: 200px;
+  }
+  .Sec1 {
+    max-width: 400px;
+  }
+  .Sec1Col3 {
+    padding-right: 0px;
+  }
+}

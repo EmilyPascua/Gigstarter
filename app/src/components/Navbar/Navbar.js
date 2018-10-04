@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/lib/Nav';
 const NavBar = (props) => {
   return (
     <div className={styles.Nav}>
-      <Navbar expand="lg" fixed="top" bg="dark" variant="dark">
+      <Navbar expand="lg" fixed="top" bg="dark" variant="dark" className={styles.NavbarCustom}>
         <Navbar.Brand href="home">Gigstarter</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

@@ -28,3 +28,9 @@
   color:white;
   background-color: rgb(71, 125, 243);
 }
+
+@media (max-width: 575.98px) {
+  .NavbarCustom {
+    width: 100vw !important;
+  }
+}
