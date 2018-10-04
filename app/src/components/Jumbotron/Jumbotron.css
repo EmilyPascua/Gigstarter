@@ -41,4 +41,18 @@
   .des {
     width: 90vw;
   }
+
+  .title {
+    font-size: 2em;
+  }
+
+  .Jumbo {
+    background-position: center;
+    background-size: auto;
+  }
+
+  .Button1 {
+    margin-right: 0;
+    margin-bottom: 5%;
+  }
 }
