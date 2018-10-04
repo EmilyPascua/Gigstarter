@@ -75,7 +75,7 @@ const Sections = () => {
             </ListGroup>
           </Col>
           <Col>
-            <iframe title="gigeconomy" width="640" height="360" src="https://www.youtube.com/embed/ul2Jieu8Pto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe className={styles.Video} title="gigeconomy" width="640" height="360" src="https://www.youtube.com/embed/ul2Jieu8Pto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </Col>
         </Row>
       </Container>

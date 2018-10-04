@@ -32,3 +32,13 @@
 .Button1 {
   margin-right: 10px;
 }
+
+@media (max-width: 575.98px) {
+  .Container {
+    width: 100vw;
+  }
+
+  .des {
+    width: 100vw;
+  }
+}
