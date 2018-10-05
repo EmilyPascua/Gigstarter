@@ -207,7 +207,6 @@
   }
   .Sign1 a {
     width: 100px;
-    content: 'For Hire';
   }
   .SignBut1m {
     display: flex;
@@ -218,7 +217,6 @@
   }
   .Sign2 img {
     width: 100px;
-    content: 'Hiring';
   }
   .SignBut2 {
     display: none;
@@ -361,7 +359,7 @@
     background-repeat: no-repeat;
     background-color: transparent;
     background-attachment: fixed;
-    background-position: center;
+    background-position: right;
     background-size: cover;
     display: flex;
     flex-direction: column;
