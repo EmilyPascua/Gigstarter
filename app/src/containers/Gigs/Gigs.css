@@ -1,0 +1,84 @@
+.Container{
+  margin-top: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ContainerBottom{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ListOfGigs{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+  Gigs {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .GigTitleSm{
+    font-weight: bold;
+    padding-top: 25px;
+    padding-left: 25px;
+    text-align: left;
+    font-size: 20px;
+  }
+  .GigTitleLg{
+    font-weight: bold;
+    padding-left: 25px;
+    text-align: left;
+    font-size: 30px;
+  }
+
+  .GigDescription{
+    text-align: justify;
+  }
+  .GigContent{
+    padding: 25px;
+    text-align: left;
+  }
+
+  .Employer{
+    text-align: left;
+    padding-left: 25px;
+    font-size: 13px;
+  }
+.TopBanner{
+  background-image: url('../../assets/school-vector.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height:450px;
+  width:1000px;
+  padding-top: 30px;
+}
+
+.BottomContent{
+  width:1000px;
+  padding-top: 30px;
+}
+
+.GigsButton{
+  margin-top: 3%;
+  align-content: left;
+}
+
+.ContentBanner{
+  margin-top: 5%;
+}
+
+.Item{
+  margin: 5px;
+}
+
+.GigList{
+  margin-bottom: 50px;
+}
