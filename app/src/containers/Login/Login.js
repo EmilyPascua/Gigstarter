@@ -24,7 +24,7 @@ class Login extends Component {
             <Card.Header as="h2">Gig Finders</Card.Header>
             <Card.Body>
               {this.state.signup1 ? <SignOne/>:<LoginOne/>}
-              <Button variant="success" onClick={ () =>this.setState({signup1:true})}>Sign up as a Freelancer</Button>
+              {this.state.signup1 ? null  : <Button className={styles.SignUpButton} variant="success" onClick={ () =>this.setState({signup1:true})}>Sign up as a Freelancer</Button>}
             </Card.Body>
           </Card>
           <Card className={styles.Card2}>

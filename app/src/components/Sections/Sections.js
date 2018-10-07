@@ -66,7 +66,7 @@ const Sections = () => {
       </Container>
       <Container className={styles.Sec3}>
         <Row className={styles.Sec3Row1}>
-          <Col>
+          <Col className={styles.Sec3Col1}>
             <h1>Be Part of the Gig Economy</h1>
             <ListGroup className={styles.Sec3ListG}>
               <ListGroup.Item variant="primary">
