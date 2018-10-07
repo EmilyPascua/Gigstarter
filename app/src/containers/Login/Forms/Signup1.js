@@ -54,7 +54,8 @@ const SignOne = props => {
         values,
         touched,
         isValid,
-        errors
+        errors,
+        validateForm
       }) => (
         <Form noValidate onSubmit={handleSubmit}>
           <Form.Row>
@@ -230,8 +231,16 @@ const SignOne = props => {
               id="validationFormik0"
             />
           </Form.Group> */}
-          <Button variant="danger" onClick={props.param} style={{marginRight:10}}>Back</Button>
-          <Button onClick={props.pg}>Next</Button>
+          <Button
+            variant="danger"
+            onClick={props.param}
+            style={{ marginRight: 10 }}
+          >
+            Back
+          </Button>
+          <Button onClick={() => validateForm().then(() => props.pg)}>
+            Next
+          </Button>
         </Form>
       )}
     </Formik>
