@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom'
 import styles from './Hiring.css';
 import Navbar from "../../../components/Navbar/Navbar";
 import Card from "react-bootstrap/lib/Card";
 import Button from "react-bootstrap/lib/Button";
-import Form from "react-bootstrap/lib/Form";
 import LoginTwo from "./../Forms/Login2";
 import SignTwo from "./../Forms/Signup2";
 
@@ -28,7 +26,7 @@ class Login extends Component {
             <Card.Header as="h2">Gig Starters</Card.Header>
             <Card.Body>
             {this.state.signup2 ? <SignTwo param={this.back}/>:<LoginTwo/>}
-              <Button className={styles.SignButton} variant="success" onClick={ () =>this.setState({signup2:true})}>Sign up as an Employer</Button>
+            {this.state.signup2 ? null : <Button className={styles.SignButton} variant="success" onClick={ () =>this.setState({signup2:true})}>Sign up as an Employer</Button>}
             </Card.Body>
           </Card>
         </div>

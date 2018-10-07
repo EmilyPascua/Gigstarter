@@ -32,3 +32,27 @@
 .Button1 {
   margin-right: 10px;
 }
+
+@media (max-width: 575.98px) {
+  .Container {
+    width: 100vw;
+  }
+
+  .des {
+    width: 90vw;
+  }
+
+  .title {
+    font-size: 2em;
+  }
+
+  .Jumbo {
+    background-position: 25%;
+    background-size: cover;
+  }
+
+  .Button1 {
+    margin-right: 0;
+    margin-bottom: 5%;
+  }
+}

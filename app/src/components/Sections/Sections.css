@@ -65,6 +65,10 @@
   margin-top: 5%;
   margin-left: 50px;
 }
+
+.Sec2Col5 {
+  display: none;
+}
 .Sec2Col4 h1 {
   margin-top: 40%;
   margin-left: 7%;
@@ -93,7 +97,6 @@
   
 }
 .Sec5 {
-
   font-family: 'Montserrat', sans-serif;
   background-image: url(../../assets/bottomback.svg);
   background-repeat: no-repeat;
@@ -137,6 +140,10 @@
   flex-direction: column;
 }
 
+.SignBut1m {
+  display: none;
+}
+
 .Sign1 img {
   margin-bottom: 25px;
 }
@@ -144,6 +151,10 @@
 .Sign2 {
   display: flex;
   flex-direction: column;
+}
+
+.SignBut2m {
+  display: none;
 }
 
 .Sign2 img {
@@ -188,4 +199,220 @@
 
 .Sec7Cont {
   height: 100%;
+}
+
+@media (max-width: 575.98px) {
+  .Sign1 img {
+    width: 100px;
+  }
+  .Sign1 a {
+    width: 100px;
+  }
+  .SignBut1m {
+    display: flex;
+    justify-content: center;
+  }
+  .SignBut1 {
+    display: none;
+  }
+  .Sign2 img {
+    width: 100px;
+  }
+  .SignBut2 {
+    display: none;
+  }
+  .SignBut2m {
+    display: flex;
+    justify-content: center;
+  }
+  .Sign2 a {
+    width: 100px;
+  }
+  .Video {
+    width: 90vw;
+  }
+  .Sec1 {
+    max-width: 100vw;
+    height: 150vh;
+  }
+  .Sec1Row1 {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .Sec1Col3 {
+    padding-right: 0px;
+  }
+  .Sec4Image img {
+    width: 25vw;
+  }
+  .Bodyone {
+    max-width: 100vw;
+    color: black;
+    background-image: none;
+    height: auto;
+    min-height: 40vh;
+    /* border: 1px solid blue; */
+  }
+
+  .Bodyone h1 {
+    font-size: 2.5em;
+    margin-top: 6vh;
+    color: #000AC2;
+    width: auto;
+    margin-left: 0;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000AC2;
+  }
+  .Bodyone p {
+    width: auto;
+    margin-left: 0;
+  }
+
+  .Sec1Col1 {
+    /* border: 1px solid red; */
+    max-width: 100vw;
+    height: 200px !important;
+    min-height: 200px !important;
+    margin-top: 10vh;
+  }
+  .Sec1Col2 {
+    margin-top: 5%;
+    max-width: 100vw;
+    min-height: 200px !important;
+  }
+  .Sec1Col3 {
+    margin-top: 5%;
+    max-width: 100vw;
+    padding-right: 15px;
+    min-height: 200px !important;
+  }
+
+  .Sec3 {
+    height: 110vh;
+  }
+
+  .VideoCont {
+    margin-top: 5vh;
+    /* border: 1px solid red; */
+    min-height: 200px;
+  }
+
+  .Sec3Row1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .Sec3Col1 {
+    min-height: 50vh;
+  }
+
+  .Sec3Row1 h1 {
+    color: #000AC2;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000AC2;
+    margin-top: 6vh;
+  }
+
+  .Sec2 {
+    height: 100vh;
+  }
+
+  .Sec2Row1 {
+    flex-direction: column;
+  }
+
+  .Sec2Col1 {
+    margin-top: 5%;
+    min-height: 100px;
+    /* border: 1px solid red; */
+  }
+  .Sec2Col2 {
+    margin-top: 5%;
+    min-height: 100px;
+    /* border: 1px solid red; */
+  }
+  .Sec2Col3 {
+    margin-top: 5%;
+    min-height: 100px;
+    /* border: 1px solid red; */
+  }
+  .Sec2Col4 {
+    display: none;
+  }
+  .Sec2Col5 {
+    display: flex;
+    max-width: 100vw;
+    flex-direction: column;
+    margin-top: 6vh;
+    min-height: 35vh;
+    /* border: 1px solid blue; */
+
+  }
+  .Sec2Col5 h1{
+    color: #000AC2;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000AC2;
+  }
+
+  .Sec4 {
+    margin-top: 6vh;
+  }
+
+  .Sec4 h1{
+    color: #000AC2;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000AC2;
+  }
+  .Sec6 {
+    padding: 0 15px 10vh 15px;
+    margin-top: 6vh;
+
+  }
+  .Sec6 h1{
+    color: #000AC2;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000AC2;
+  }
+
+  .Sec5 {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(../../assets/bottomback.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-attachment: fixed;
+    background-position: 100%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .Sec5Card1 {
+    width: 90vw;
+  }
+  .Sec5Card2 {
+    width: 90vw;
+  }
+  .SocCont img{
+    width: 10vw;
+  }
+  .SocCont p{
+    font-size: .7em;
+  }
+  .FooterAbout {
+    display: none;
+  }
+  .FooterStuff {
+    display: none;
+  }
 }

@@ -1,26 +1,25 @@
-import React from 'react';
-import styles from './Sections.css';
-import Emoji from "../EmojiSupport/Emoji";
-import Container from 'react-bootstrap/lib/Container';
-import Row from 'react-bootstrap/lib/Row';
-import Col from 'react-bootstrap/lib/Col';
-import ListGroup from 'react-bootstrap/lib/ListGroup';
-import Form from 'react-bootstrap/lib/Form';
-import Card from 'react-bootstrap/lib/Card';
-import Button from 'react-bootstrap/lib/Button';
-import searchicon from '../../assets/search.svg';
-import envelope from '../../assets/envelope.svg';
-import growth from '../../assets/growth.svg';
-import bag from '../../assets/money-bag.svg';
-import shop from '../../assets/shop.svg';
-import presentation from '../../assets/presentation.svg';
-import employee from '../../assets/employee.svg';
-import businessman from '../../assets/businessman.svg';
-import fb from '../../assets/social/facebook.svg';
-import twit from '../../assets/social/twitter.svg';
-import insta from '../../assets/social/instagram.svg';
-import linkedin from '../../assets/social/linkedin.svg';
-
+import React from 'react'
+import styles from './Sections.css'
+import Emoji from '../EmojiSupport/Emoji'
+import Container from 'react-bootstrap/lib/Container'
+import Row from 'react-bootstrap/lib/Row'
+import Col from 'react-bootstrap/lib/Col'
+import ListGroup from 'react-bootstrap/lib/ListGroup'
+import Form from 'react-bootstrap/lib/Form'
+import Card from 'react-bootstrap/lib/Card'
+import Button from 'react-bootstrap/lib/Button'
+import searchicon from '../../assets/search.svg'
+import envelope from '../../assets/envelope.svg'
+import growth from '../../assets/growth.svg'
+import bag from '../../assets/money-bag.svg'
+import shop from '../../assets/shop.svg'
+import presentation from '../../assets/presentation.svg'
+import employee from '../../assets/employee.svg'
+import businessman from '../../assets/businessman.svg'
+import fb from '../../assets/social/facebook.svg'
+import twit from '../../assets/social/twitter.svg'
+import insta from '../../assets/social/instagram.svg'
+import linkedin from '../../assets/social/linkedin.svg'
 
 const Sections = () => {
   return (
@@ -38,49 +37,74 @@ const Sections = () => {
               outside of the classroom.
             </p>
           </Col>
-          <Col className={styles.Sec1Col1} xs={2}>
-            <img src={searchicon} alt="search" width="64px" />
-            <h3>Step 1</h3>
-            <p>
-              Scroll through hundreds of gig opportunities offered on Gigstarter
-            </p>
-          </Col>
-          <Col className={styles.Sec1Col2} xs={2}>
-            <img src={envelope} alt="envelope" width="64px" />
-            <h3>Step 2</h3>
-            <p>
-              If you show interest in a gig, contact the employer to discover
-              the details of the job
-            </p>
-          </Col>
-          <Col className={styles.Sec1Col3} xs={2}>
-            <img src={growth} alt="money" width="64px" />
-            <h3>Step 3</h3>
-            <p>
-              Get paid for the work you have done! Aside from the extra money,
-              you have now expanded your resume in a positive & professional
-              direction
-            </p>
-          </Col>
+            <Col className={styles.Sec1Col1} xs={2}>
+              <img src={searchicon} alt="search" width="64px" />
+              <h3>Step 1</h3>
+              <p>
+                Scroll through hundreds of gig opportunities offered on
+                Gigstarter
+              </p>
+            </Col>
+            <Col className={styles.Sec1Col2} xs={2}>
+              <img src={envelope} alt="envelope" width="64px" />
+              <h3>Step 2</h3>
+              <p>
+                If you show interest in a gig, contact the employer to discover
+                the details of the job
+              </p>
+            </Col>
+            <Col className={styles.Sec1Col3} xs={2}>
+              <img src={growth} alt="money" width="64px" />
+              <h3>Step 3</h3>
+              <p>
+                Get paid for the work you have done! Aside from the extra money,
+                you have now expanded your resume in a positive & professional
+                direction
+              </p>
+            </Col>
         </Row>
       </Container>
       <Container className={styles.Sec3}>
         <Row className={styles.Sec3Row1}>
-          <Col>
+          <Col className={styles.Sec3Col1}>
             <h1>Be Part of the Gig Economy</h1>
             <ListGroup className={styles.Sec3ListG}>
-              <ListGroup.Item variant="primary">Work at your own pace <Emoji symbol="🚴‍" label="bike" /></ListGroup.Item>
-              <ListGroup.Item variant="secondary">Gain real-world experience <Emoji symbol="🌎" label="globe" /></ListGroup.Item>
-              <ListGroup.Item variant="success">Make primary/secondary income <Emoji symbol="💰" label="money" /></ListGroup.Item>
+              <ListGroup.Item variant="primary">
+                Work at your own pace <Emoji symbol="🚴‍" label="bike" />
+              </ListGroup.Item>
+              <ListGroup.Item variant="secondary">
+                Gain real-world experience <Emoji symbol="🌎" label="globe" />
+              </ListGroup.Item>
+              <ListGroup.Item variant="success">
+                Make primary/secondary income{' '}
+                <Emoji symbol="💰" label="money" />
+              </ListGroup.Item>
             </ListGroup>
           </Col>
-          <Col>
-            <iframe title="gigeconomy" width="640" height="360" src="https://www.youtube.com/embed/ul2Jieu8Pto" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <Col className={styles.VideoCont}>
+            <iframe
+              className={styles.Video}
+              title="gigeconomy"
+              width="640"
+              height="360"
+              src="https://www.youtube.com/embed/ul2Jieu8Pto"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            />
           </Col>
         </Row>
       </Container>
       <Container className={styles.Sec2}>
         <Row className={styles.Sec2Row1}>
+        <Col className={styles.Sec2Col5} xs={6}>
+            <h1>The Big Picture</h1>
+            <p>
+              Providing students with practical experience would not be possible
+              without the large scope of work provided by business owners across
+              Los Angeles. Every transaction on Gigstarter does all of 3 things
+            </p>
+          </Col>
           <Col className={styles.Sec2Col1}>
             <img src={bag} alt="bag" width="64px" />
             <p>Provide students with experience & cash</p>
@@ -103,7 +127,6 @@ const Sections = () => {
           </Col>
         </Row>
       </Container>
-
       <Container className={styles.Sec4}>
         <Row>
           <Col>
@@ -115,13 +138,13 @@ const Sections = () => {
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col className={styles.Sec4Image}>
             <img src="https://via.placeholder.com/300x300" alt="placeholder" />
           </Col>
-          <Col>
+          <Col className={styles.Sec4Image}>
             <img src="https://via.placeholder.com/300x300" alt="placeholder" />
           </Col>
-          <Col>
+          <Col className={styles.Sec4Image}>
             <img src="https://via.placeholder.com/300x300" alt="placeholder" />
           </Col>
         </Row>
@@ -129,24 +152,41 @@ const Sections = () => {
       <div id="Sec6" />
       <div className={styles.Sec6}>
         <h1>Sign up</h1>
-        <p>Heard enough? Let's kickstart your career by enrolling in our Gigstarter economy!</p>
+        <p>
+          Heard enough? Let's kickstart your career by enrolling in our
+          Gigstarter economy!
+        </p>
         <div className={styles.SignCont}>
           <div className={styles.Sign1}>
             <img src={businessman} alt="businessman" width="256px" />
-            <Button href="forhire" variant="success">I am looking for a Gig.</Button>
+            <Button className={styles.SignBut1} href="forhire" variant="success">
+              I am looking for a Gig.
+            </Button>
+            <Button className={styles.SignBut1m} href="forhire" variant="success">
+              For Hire
+            </Button>
           </div>
           <div className={styles.SignMiddle}>OR</div>
           <div className={styles.Sign2}>
             <img src={employee} alt="work" width="256px" />
-            <Button href="hiring" variant="primary">I am looking for Talent.</Button>
+            <Button className={styles.SignBut2} href="hiring" variant="primary">
+              I am looking for Talent.
+            </Button>
+            <Button className={styles.SignBut2m} href="hiring" variant="primary">
+              Hiring
+            </Button>
           </div>
         </div>
       </div>
       <div className={styles.Sec5}>
         <Card bg="secondary" border="success" className={styles.Sec5Card1}>
-          <Card.Header><h1>Reach Us</h1></Card.Header>
+          <Card.Header>
+            <h1>Reach Us</h1>
+          </Card.Header>
           <Card.Body>
-            <Card.Title>Call us or email to find out more information about Gigstarter</Card.Title>
+            <Card.Title>
+              Call us or email to find out more information about Gigstarter
+            </Card.Title>
             <Card.Text>
               <p>5151 State University Dr, Los Angeles, CA 90032</p>
               <p>1.800.555.555</p>
@@ -156,7 +196,10 @@ const Sections = () => {
         </Card>
 
         <Card bg="secondary" border="success" className={styles.Sec5Card2}>
-          <Card.Header> <h1>Leave A Message</h1></Card.Header>
+          <Card.Header>
+            {' '}
+            <h1>Leave A Message</h1>
+          </Card.Header>
           <Card.Body>
             <Form>
               <Form.Group controlId="exampleForm.ControlInput1">
@@ -196,16 +239,16 @@ const Sections = () => {
                 <p>Gigstarter</p>
               </div>
             </Col>
-            <Col style={{ textAlign: "right" }}> ABOUT US</Col>
+            <Col className={styles.FooterAbout} style={{ textAlign: 'right' }}> ABOUT US</Col>
           </Row>
           <Row className={styles.FooterBottom}>
             <Col>© 2018 Gigstarter Inc.</Col>
-            <Col style={{ textAlign: "right" }}>STUFF</Col>
+            <Col className={styles.FooterStuff} style={{ textAlign: 'right' }}>STUFF</Col>
           </Row>
         </Container>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Sections;
+export default Sections

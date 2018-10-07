@@ -30,3 +30,16 @@
   margin-left: 5vw;
   overflow: scroll
 }
+
+.SignUpButton{
+  margin-bottom: 10px;
+}
+
+@media (max-width: 575.98px) {
+  .Login {
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
