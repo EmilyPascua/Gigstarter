@@ -53,10 +53,10 @@
     font-size: 13px;
   }
 .TopBanner{
-  /* background-image: url('../../assets/school-vector.png');
+  background-image: url('../../../assets/school-vector.png');
   background-size: 100%;
-  background-repeat: no-repeat; */
-  height:180px;
+  background-repeat: no-repeat;
+  height:450px;
   width:1000px;
   padding-top: 30px;
 }
@@ -81,8 +81,4 @@
 
 .GigList{
   margin-bottom: 50px;
-}
-
-.jobCard {
-  cursor: pointer;
 }
