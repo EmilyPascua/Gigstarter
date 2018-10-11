@@ -11,12 +11,11 @@ const SignOne = props => {
       onSubmit={console.log}
       validate={values => {
         let errors = {}
+        props.save(values)
         if (!values.email) {
-          errors.email = 'Required'
-        } else if (
-          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        ) {
-          errors.email = 'Invalid email address'
+          errors.email = 'Required';
+        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+          errors.email = 'Invalid email address';
         }
         if (!values.firstName) {
           errors.firstName = 'Required'
@@ -39,13 +38,25 @@ const SignOne = props => {
         if (!values.zip) {
           errors.zip = 'Required'
         }
-        if (!values.terms) {
-          errors.terms = 'Please agree to the terms and conditions'
+        if (!values.dob) {
+          errors.dob = 'Required'
+        } else if (!/^\d\d\/\d\d\/\d\d\d\d$/g.test(values.dob)) {
+          errors.dob = 'Invalid date of birth';
         }
-
         return errors
       }}
-      initialValues={{}}
+
+      initialValues={{
+        firstName: props.form.fname,
+        lastName: props.form.lname,
+        email: props.form.email,
+        dob: props.form.dob,
+        address1: props.form.addr1,
+        address2: props.form.addr2,
+        city: props.form.city,
+        state: props.form.state,
+        zip: props.form.zip
+      }}
     >
       {({
         handleSubmit,
@@ -85,6 +96,38 @@ const SignOne = props => {
               />
               <Form.Control.Feedback type="invalid">
                 {errors.lastName}
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group as={Col}>
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="example@example.com"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                isInvalid={!!errors.email}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.email}
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group as={Col} md="3">
+              <Form.Label>Date of Birth</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="01/21/1990"
+                name="dob"
+                value={values.dob}
+                onChange={handleChange}
+                isInvalid={!!errors.dob}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.dob}
               </Form.Control.Feedback>
             </Form.Group>
           </Form.Row>
@@ -238,7 +281,7 @@ const SignOne = props => {
           >
             Back
           </Button>
-          <Button onClick={() => validateForm().then(() => props.pg)}>
+          <Button onClick={() => validateForm().then((e) => {console.log(e);if(isEmpty(e)){props.pg()}})}>
             Next
           </Button>
         </Form>
@@ -247,3 +290,8 @@ const SignOne = props => {
   )
 }
 export default SignOne
+
+const isEmpty = (obj) => {
+  for (let x in obj) { return false; }
+   return true;
+}
