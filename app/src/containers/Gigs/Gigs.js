@@ -9,6 +9,8 @@ import Row from 'react-bootstrap/lib/Row'
 import Col from 'react-bootstrap/lib/Col'
 import GigCard from './GigCard/GigCard'
 import Fuse from 'fuse.js'
+import GigModal from './GigModal/GigModal'
+import Badge from 'react-bootstrap/lib/Badge'
 
 class Gigs extends Component {
   state = {
@@ -88,7 +90,8 @@ class Gigs extends Component {
         jobSkills: ['Music', 'Dependable', 'Electronics']
       }
     ],
-    currentGig: {}
+    currentGig: {},
+    modalShow: false
   }
 
   componentDidMount = () => {
@@ -130,16 +133,40 @@ class Gigs extends Component {
     }
   }
 
+  addBadges = () => {
+    console.log(this.state.currentGig.jobSkills)
+    if (this.state.currentGig.jobSkills) {
+      return this.state.currentGig.jobSkills.map(skill => (
+        <p className={styles.BadgePill}>
+          <Badge pill variant="primary" className={styles.Pill}>
+            {skill}
+          </Badge>
+        </p>
+      ))
+    }
+    return null
+  }
+
   render() {
+    let modalClose = () => this.setState({ modalShow: false })
+    const mq = window.matchMedia('(min-width: 768px)')
     return (
       <div className={styles.Gigs}>
         <Navbar />
         <div className={styles.Container}>
+          <GigModal
+            show={this.state.modalShow}
+            onHide={modalClose}
+            job={this.state.currentGig}
+          />
           <div className={styles.TopBanner}>
             <Form>
               <Row className="show-grid">
                 <Col lg={6} md={6}>
-                  <Form.Group controlId="formKeyword">
+                  <Form.Group
+                    controlId="formKeyword"
+                    className={styles.InputSearch}
+                  >
                     <div align="left">
                       <h3>
                         <b>Find Gig</b>
@@ -155,7 +182,10 @@ class Gigs extends Component {
                   </Form.Group>
                 </Col>
                 <Col lg={6} md={6}>
-                  <Form.Group controlId="formLocation">
+                  <Form.Group
+                    controlId="formLocation"
+                    className={styles.InputLocation}
+                  >
                     <div align="left">
                       <h3>
                         <b>Location</b>
@@ -169,8 +199,12 @@ class Gigs extends Component {
                       placeholder="Los Angeles, CA"
                     />
                   </Form.Group>
-                  <div align="right">
-                    <Button variant="success" type="submit">
+                  <div align={mq.matches ? 'right' : 'center'}>
+                    <Button
+                      variant="success"
+                      type="submit"
+                      className={styles.FindButton}
+                    >
                       Find Gigs
                     </Button>
                   </div>
@@ -191,7 +225,14 @@ class Gigs extends Component {
                   {this.state.gigObjs.map(job => (
                     <div
                       className={styles.jobCard}
-                      onClick={() => this.setCurrentGig(job.jobID)}
+                      onClick={() => {
+                        if (mq.matches) {
+                          this.setCurrentGig(job.jobID)
+                        } else {
+                          this.setCurrentGig(job.jobID)
+                          this.setState({ modalShow: true })
+                        }
+                      }}
                       key={job.jobID}
                     >
                       <GigCard data={job} />
@@ -199,7 +240,7 @@ class Gigs extends Component {
                   ))}
                 </div>
               </Col>
-              <Col lg={6} md={6}>
+              <Col lg={6} md={6} className={styles.BigCard}>
                 <hr />
                 <div className={styles.GigTitleLg}>
                   {this.state.currentGig.jobTitle}
@@ -211,6 +252,7 @@ class Gigs extends Component {
                 <p className={styles.GigDescription}>
                   {this.state.currentGig.jobDes}
                 </p>
+                <div className={styles.BadgePillContainer}>{this.addBadges()}</div>
                 <div className={styles.GigMap} />
               </Col>
             </Row>

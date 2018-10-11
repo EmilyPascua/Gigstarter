@@ -77,6 +77,11 @@
 
 .Item{
   margin: 5px;
+  transition: all .2s ease-in;
+}
+
+.Item:hover {
+  background-color: rgb(218, 218, 218);
 }
 
 .GigList{
