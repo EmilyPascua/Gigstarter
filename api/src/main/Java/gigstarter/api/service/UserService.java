@@ -16,13 +16,18 @@ public class UserService {
     @Autowired
     EmployerUserRepository employerUserRepository;
 
+    @Autowired
+    EmailService emailService;
+
     public boolean createStudentUser(StudentUser user){
         studentUserRepository.save(user);
+        emailService.sendVerificationEmail(user);
         return true;
     }
 
     public boolean createEmployerUser(EmployerUser user){
         employerUserRepository.save(user);
+        emailService.sendVerificationEmail(user);
         return true;
     }
 

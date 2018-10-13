@@ -3,7 +3,7 @@ package gigstarter.api.model;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Email;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -13,15 +13,15 @@ public abstract class ApplicationUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotNull
-    @Length(min = 6)
+
+    @Column(unique = true, nullable = false)
+    @Email
     private String email;
 
-    @NotNull
+    @Column(nullable = false)
     @Length(min = 6)
     private String password;
 
-    @Column(name = "enabled")
     private boolean enabled;
 
     private String firstName;
@@ -45,5 +45,8 @@ public abstract class ApplicationUser {
     }
     public void setPassword(String password) {
         this.password = password;
+    }
+    public void setEnabled(boolean enabled){
+        this.enabled = enabled;
     }
 }

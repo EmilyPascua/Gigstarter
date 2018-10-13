@@ -8,7 +8,9 @@ gigstarter\api\repository\JobRepository.class
 gigstarter\api\exception\ResourceNotFoundException.class
 gigstarter\api\security\AccountCredentials.class
 gigstarter\api\repository\ApplicationUserRepository.class
+gigstarter\api\service\EmailService.class
 gigstarter\api\model\VerificationToken.class
+gigstarter\api\repository\VerificationTokenRepository.class
 gigstarter\api\model\StudentUser.class
 gigstarter\api\model\ApplicationUser.class
 gigstarter\api\security\SecurityConstants.class
