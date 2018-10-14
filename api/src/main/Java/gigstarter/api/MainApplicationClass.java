@@ -8,10 +8,12 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @RestController
 @EnableAutoConfiguration
+@EnableJpaAuditing
 public class MainApplicationClass {
 
     @RequestMapping("/")

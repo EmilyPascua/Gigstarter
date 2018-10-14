@@ -7,88 +7,96 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "jobs")
 public class Job extends AuditModel {
-    @Id
-    @GeneratedValue(generator = "job_generator")
-    @SequenceGenerator(
-            name = "job_generator",
-            sequenceName = "job_sequence",
-            initialValue = 1000
-    )
-    private Long id;
+  @Id
+  @GeneratedValue(generator = "job_generator")
+  @SequenceGenerator(name = "job_generator", sequenceName = "job_sequence", initialValue = 1000)
+  private Long id;
 
-    @NotBlank
-    @Size(min = 3, max = 100)
-    private String title;
+  @NotBlank
+  @Size(min = 3, max = 100)
+  private String title;
 
-    @Column(columnDefinition = "text")
-    private String description;
+  @Column(columnDefinition = "text")
+  private String description;
 
-    @Column(columnDefinition = "text")
-    private String major;
+  @Column(columnDefinition = "text")
+  private String major;
 
-    @Column(columnDefinition = "text")
-    private String industry;
+  @Column(columnDefinition = "text")
+  private String industry;
 
-    @Column(columnDefinition = "text")
-    private String location;
+  @Column(columnDefinition = "text")
+  private String location;
 
-    @Column(columnDefinition = "integer")
-    private Integer payout;
+  @Column(columnDefinition = "text")
+  private String posterId;
 
-    // Getters and Setters
-    
-    public Long getId() {
-        return id;
-    }
+  @Column(columnDefinition = "integer")
+  private Integer payout;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  // Getters and Setters
 
-    public String getTitle() {
-        return title;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public String getDescription() {
-        return description;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-    public String getMajor() {
-        return major;
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    public void setMajor(String major) {
-        this.major = major;
-    }
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
-    public String getIndustry() {
-        return industry;
-    }
+  public String getMajor() {
+    return major;
+  }
 
-    public void setIndustry(String industry) {
-        this.industry = industry;
-    }
-    public String getLocation() {
-        return location;
-    }
+  public void setMajor(String major) {
+    this.major = major;
+  }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+  public String getIndustry() {
+    return industry;
+  }
 
-    public Integer getPayout() {
-        return payout;
-    }
+  public void setIndustry(String industry) {
+    this.industry = industry;
+  }
 
-    public void setPayout(Integer payout) {
-        this.payout = payout;
-    }
+  public String getLocation() {
+    return location;
+  }
+
+  public void setLocation(String location) {
+    this.location = location;
+  }
+
+  public String getPosterId() {
+    return posterId;
+  }
+
+  public void setPosterId(String posterId) {
+    this.posterId = posterId;
+  }
+
+  public Integer getPayout() {
+    return payout;
+  }
+
+  public void setPayout(Integer payout) {
+    this.payout = payout;
+  }
 }
