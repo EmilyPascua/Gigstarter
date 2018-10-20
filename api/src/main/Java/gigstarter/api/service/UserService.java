@@ -22,12 +22,12 @@ public class UserService {
     EmployerUserRepository employerUserRepository;
 
     @Autowired
-    EmailService emailService;
+    EmailVerificationService emailVerificationService;
 
     public boolean createStudentUser(StudentUser user){
         if(!emailExists(user.getEmail())){
             studentUserRepository.save(user);
-            return emailService.sendVerificationEmail(user);
+            return emailVerificationService.sendVerificationEmail(user);
         }
         else{
             throw new UserAlreadyExistsException("The e-mail provided already exists.");
@@ -37,7 +37,7 @@ public class UserService {
     public boolean createEmployerUser(EmployerUser user){
         if(!emailExists(user.getEmail())){
             employerUserRepository.save(user);
-            return emailService.sendVerificationEmail(user);
+            return emailVerificationService.sendVerificationEmail(user);
         }
         else{
             throw new UserAlreadyExistsException("The e-mail provided already exists.");

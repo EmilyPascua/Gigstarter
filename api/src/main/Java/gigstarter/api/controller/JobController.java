@@ -24,6 +24,7 @@ public class JobController {
 
     @PostMapping("/jobs")
     public Job createJob(@Valid @RequestBody Job job) {
+        System.out.println(job.getCreatedAt());
         return jobRepository.save(job);
     }
 

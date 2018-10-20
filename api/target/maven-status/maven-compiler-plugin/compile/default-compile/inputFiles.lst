@@ -14,6 +14,7 @@ C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\repo
 C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\security\WebSecurity.java
 C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\model\Job.java
 C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\service\EmailService.java
+C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\service\EmailVerificationService.java
 C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\security\JWTAuthenticationFilter.java
 C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\service\UserService.java
 C:\Users\lisas\Documents\GitHub\Gigstarter\api\src\main\java\gigstarter\api\MainApplicationClass.java

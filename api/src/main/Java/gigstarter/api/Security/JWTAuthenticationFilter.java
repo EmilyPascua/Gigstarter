@@ -1,7 +1,6 @@
 package gigstarter.api.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import gigstarter.api.model.ApplicationUser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +65,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
     @Override
     protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response, AuthenticationException failed) throws IOException, ServletException {
-        response.addHeader("Debug", "Authentication failed");
         super.unsuccessfulAuthentication(request, response, failed);
     }
 }

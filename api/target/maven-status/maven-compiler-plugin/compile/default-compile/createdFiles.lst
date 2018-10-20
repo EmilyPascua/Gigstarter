@@ -17,6 +17,7 @@ gigstarter\api\security\AccountCredentials.class
 gigstarter\api\model\StudentUser.class
 gigstarter\api\exception\InvalidEmailTokenException.class
 gigstarter\api\security\SecurityConstants.class
+gigstarter\api\service\EmailVerificationService.class
 gigstarter\api\model\EmployerUser.class
 gigstarter\api\service\UserDetailsServiceImpl.class
 gigstarter\api\security\JWTAuthenticationFilter.class
