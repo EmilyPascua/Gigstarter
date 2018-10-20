@@ -36,7 +36,6 @@ public class StudentUser extends ApplicationUser {
     public void setindustry(String industry) {
         this.industry = industry;
     }
-
     public String getschool() {
         return school;
     }
