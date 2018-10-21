@@ -2,6 +2,7 @@ package gigstarter.api.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -33,6 +34,18 @@ public class Job extends AuditModel {
 
   @Column(columnDefinition = "integer")
   private Integer payout;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name="idEmployer")
+  private EmployerUser employer;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name="idStudent")
+  private StudentUser student;
+
+  public Job(EmployerUser employer){
+    this.employer = employer;
+  }
 
   // Getters and Setters
 
@@ -98,5 +111,21 @@ public class Job extends AuditModel {
 
   public void setPayout(Integer payout) {
     this.payout = payout;
+  }
+
+  public EmployerUser getEmployer() {
+    return employer;
+  }
+
+  public void setEmployer(EmployerUser employer) {
+    this.employer = employer;
+  }
+
+  public StudentUser getStudent() {
+    return student;
+  }
+
+  public void setStudent(StudentUser student) {
+    this.student = student;
   }
 }

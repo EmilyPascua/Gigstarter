@@ -56,4 +56,17 @@ public class UserController {
         }
     }
 
+    @PostMapping("/email/disable")
+    public String disableEmailNotifications(@RequestHeader("Authorization") String auth){
+        boolean success = true;
+
+        if(success){
+            return "Email notifications have been disabled for ";
+        }
+        else{
+            return "Something went wrong! The server could not disable notifications  for" +
+                    " Please inform Gigstarter about this error at ";
+        }
+    }
+
 }

@@ -1,6 +1,8 @@
 package gigstarter.api.service;
 
+import gigstarter.api.exception.ResourceNotFoundException;
 import gigstarter.api.exception.UserAlreadyExistsException;
+import gigstarter.api.model.ApplicationUser;
 import gigstarter.api.model.EmployerUser;
 import gigstarter.api.model.StudentUser;
 import gigstarter.api.repository.ApplicationUserRepository;
@@ -13,16 +15,16 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     @Autowired
-    ApplicationUserRepository applicationUserRepository;
+    private ApplicationUserRepository applicationUserRepository;
 
     @Autowired
-    StudentUserRepository studentUserRepository;
+    private StudentUserRepository studentUserRepository;
 
     @Autowired
-    EmployerUserRepository employerUserRepository;
+    private EmployerUserRepository employerUserRepository;
 
     @Autowired
-    EmailVerificationService emailVerificationService;
+    private EmailVerificationService emailVerificationService;
 
     public boolean createStudentUser(StudentUser user){
         if(!emailExists(user.getEmail())){
@@ -46,6 +48,36 @@ public class UserService {
 
     public boolean emailExists(String email){
         return(applicationUserRepository.findByEmail(email) != null);
+    }
+
+    public ApplicationUser findUser(String email){
+        ApplicationUser user = applicationUserRepository.findByEmail(email);
+        if(user == null){
+            throw new ResourceNotFoundException("User "+email+" was not found in the database.");
+        }
+        else{
+            return user;
+        }
+    }
+
+    public StudentUser findStudentUser(String email){
+        StudentUser user = studentUserRepository.findByEmail(email);
+        if(user == null){
+            throw new ResourceNotFoundException("Student user "+email+" was not found in the database.");
+        }
+        else{
+            return user;
+        }
+    }
+
+    public EmployerUser findEmployerUser(String email){
+        EmployerUser user = employerUserRepository.findByEmail(email);
+        if(user == null){
+            throw new ResourceNotFoundException("Employer user "+email+" was not found in the database.");
+        }
+        else{
+            return user;
+        }
     }
 
 }

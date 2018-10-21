@@ -1,5 +1,6 @@
 gigstarter\api\service\UserService.class
 gigstarter\api\controller\UserController.class
+gigstarter\api\exception\InvalidEmailException.class
 gigstarter\api\Security\WebSecurity.class
 gigstarter\api\repository\JobRepository.class
 gigstarter\api\repository\ApplicationUserRepository.class
@@ -8,6 +9,7 @@ gigstarter\api\model\VerificationToken.class
 gigstarter\api\repository\VerificationTokenRepository.class
 gigstarter\api\model\ApplicationUser.class
 gigstarter\api\Security\AccountCredentials.class
+gigstarter\api\service\JobService.class
 gigstarter\api\controller\JobController.class
 gigstarter\api\MainApplicationClass.class
 gigstarter\api\repository\StudentUserRepository.class
@@ -16,9 +18,11 @@ gigstarter\api\Security\JWTAuthorizationFilter.class
 gigstarter\api\model\Job.class
 gigstarter\api\exception\ResourceNotFoundException.class
 gigstarter\api\Security\SecurityConstants.class
+gigstarter\api\exception\ForbiddenActionException.class
 gigstarter\api\model\StudentUser.class
 gigstarter\api\exception\InvalidEmailTokenException.class
 gigstarter\api\service\EmailVerificationService.class
+gigstarter\api\service\AuthService.class
 gigstarter\api\Security\JWTAuthenticationFilter.class
 gigstarter\api\model\EmployerUser.class
 gigstarter\api\service\UserDetailsServiceImpl.class

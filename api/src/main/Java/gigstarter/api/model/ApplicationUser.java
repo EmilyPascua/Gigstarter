@@ -22,6 +22,7 @@ public abstract class ApplicationUser {
     private String password;
 
     private boolean enabled;
+    private boolean emailNotifications = enabled;
 
     private String firstName;
     private String lastName;
@@ -51,4 +52,13 @@ public abstract class ApplicationUser {
     public boolean isEnabled(){
         return enabled;
     }
+
+    public void setEmailNotifications(boolean emailNotifications){
+        this.emailNotifications = emailNotifications;
+    }
+
+    public boolean emailNotificationsEnabled(){
+        return emailNotifications;
+    }
+
 }

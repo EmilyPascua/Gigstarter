@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+
 import static gigstarter.api.security.SecurityConstants.EXPIRATION_TIME;
 import static gigstarter.api.security.SecurityConstants.HEADER_STRING;
 import static  gigstarter.api.security.SecurityConstants.SECRET;

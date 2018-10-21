@@ -1,5 +1,7 @@
 package gigstarter.api.service;
 
+import gigstarter.api.exception.InvalidEmailException;
+import gigstarter.api.model.ApplicationUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
@@ -54,6 +56,27 @@ public class EmailService {
             // Handle exception
             return false;
         }
+    }
+
+    public void sendMailToUser(ApplicationUser user, String subject, String text){
+        if(!user.isEnabled()){
+            throw new InvalidEmailException("The e-mail address "+user.getEmail()+" has not been confirmed.");
+        }
+        else if(!user.emailNotificationsEnabled()){
+            throw new InvalidEmailException("The user "+user.getEmail()+" has disabled e-mail notifications.");
+        }
+        else{
+            String email = user.getEmail();
+            sendSimpleMessage(email, subject, text);
+        }
+    }
+
+    public boolean emailConfirmed(ApplicationUser user){
+        return user.isEnabled();
+    }
+
+    public boolean disableEmailNotificationUrl(ApplicationUser user){
+        return true;
     }
 
 

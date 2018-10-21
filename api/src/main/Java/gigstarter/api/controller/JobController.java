@@ -1,8 +1,12 @@
 package gigstarter.api.controller;
 
 import gigstarter.api.exception.ResourceNotFoundException;
+import gigstarter.api.model.ApplicationUser;
 import gigstarter.api.model.Job;
+import gigstarter.api.model.StudentUser;
 import gigstarter.api.repository.JobRepository;
+import gigstarter.api.service.AuthService;
+import gigstarter.api.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,6 +16,12 @@ import javax.validation.Valid;
 
 @RestController
 public class JobController {
+
+    @Autowired
+    AuthService authService;
+
+    @Autowired
+    JobService jobService;
 
     @Autowired
     private JobRepository jobRepository;
@@ -48,4 +58,25 @@ public class JobController {
                     return ResponseEntity.ok().build();
                 }).orElseThrow(() -> new ResourceNotFoundException("Job not found with id " + jobId));
     }
+
+    @PostMapping("/jobs/apply/{jobId}")
+    public String applyForJob(@PathVariable Long jobId){
+
+        Job j = jobRepository.findById(jobId)
+                .orElseThrow(() -> new ResourceNotFoundException("Job not found with id " + jobId));
+
+        ApplicationUser user = authService.getUser();
+
+        jobService.apply(user, j);
+
+        String res = "You have applied for the job "+j.getTitle()+".";
+        if(user.emailNotificationsEnabled()){
+            res += " You should receive an e-mail shortly containing the details of the gig.";
+        }
+        else{
+            res += " If you and the employer match, then they will contact you by e-mail.";
+        }
+        return res;
+    }
+
 }
