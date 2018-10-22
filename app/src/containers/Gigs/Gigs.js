@@ -11,6 +11,7 @@ import GigCard from './GigCard/GigCard'
 import Fuse from 'fuse.js'
 import GigModal from './GigModal/GigModal'
 import Badge from 'react-bootstrap/lib/Badge'
+import axios from 'axios'
 
 class Gigs extends Component {
   state = {
@@ -52,54 +53,47 @@ class Gigs extends Component {
         jobSkills: ['Music', 'Dependable', 'Electronics']
       }
     ],
-    gigObjs: [
-      {
-        jobID: '0',
-        jobTitle: 'Event Cook',
-        jobCompany: 'Eat Smart',
-        jobDes:
-          'Our local organization is conducting a week-long fundraiser to raise as much money as possible to prepare for the music festival happening this weekend. We require a minimum of 2 hours per day for the week. The gig pays $300 in total.',
-        jobPay: 300,
-        jobPayType: 'onetime',
-        jobAddr1: '2199 Angeles Avenue',
-        jobTime: '1 day',
-        jobSkills: ['Cooking', 'Organization', 'Walking']
-      },
-      {
-        jobID: '1',
-        jobTitle: 'Housekeeper',
-        jobCompany: 'John Smith',
-        jobDes:
-          'I am looking for a house keeper to maintain cleanliness in my home.  This will be a once a week job.  Duties will include: cleaning the sofa, floors, etc...',
-        jobPay: 20,
-        jobPayType: 'hourly',
-        jobAddr1: '837 Aiso St',
-        jobTime: '1 day',
-        jobSkills: ['Cleaning', 'Washing', 'Drying']
-      },
-      {
-        jobID: '2',
-        jobTitle: 'DJ',
-        jobCompany: 'Numb Media',
-        jobDes:
-          "We are looking for a DJ for our daughter's 14th birthday.  Must know current hit songs and be willing to play song requests.",
-        jobPay: 25,
-        jobPayType: 'hourly',
-        jobAddr1: '4432 June Ct',
-        jobTime: '1 day',
-        jobSkills: ['Music', 'Dependable', 'Electronics']
-      }
-    ],
+    gigObjs: [],
     currentGig: {},
     modalShow: false
   }
 
   componentDidMount = () => {
     const firstGig =
-      this.state.gigObjs.length > 0 ? this.state.gigObjs[0] : null
+      this.state.gigObjsOriginal.length > 0
+        ? this.state.gigObjsOriginal[0]
+        : null
     this.setState({
       currentGig: firstGig
     })
+
+    let initObjs = this.state.gigObjsOriginal
+
+    axios
+      .get('https://gigstarter-backend.herokuapp.com/jobs')
+      .then(response => {
+        response.data.content.map(job => {
+          initObjs.push({
+            jobID: job.id.toString(),
+            jobTitle: job.title,
+            jobCompany: job.posterId,
+            jobDes: job.description,
+            jobPay: job.payout,
+            jobPayType: 'onetime',
+            jobAddr1: job.location,
+            jobTime: '1 day',
+            jobSkills: ['Cooking', 'Organization', 'Walking']
+          })
+          return 0;
+        })
+        this.setState({
+          gigObjsOriginal: initObjs,
+          gigObjs: initObjs
+        })
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
   }
 
   setCurrentGig = id => {
@@ -121,7 +115,6 @@ class Gigs extends Component {
     }
     const fs = new Fuse(this.state.gigObjsOriginal, options)
     const orig = this.state.gigObjsOriginal
-    console.log(fs.search(e.target.value))
     if (e.target.value === '') {
       this.setState({
         gigObjs: orig
@@ -134,10 +127,9 @@ class Gigs extends Component {
   }
 
   addBadges = () => {
-    console.log(this.state.currentGig.jobSkills)
     if (this.state.currentGig.jobSkills) {
-      return this.state.currentGig.jobSkills.map(skill => (
-        <p className={styles.BadgePill}>
+      return this.state.currentGig.jobSkills.map((skill, id) => (
+        <p className={styles.BadgePill} key={id}>
           <Badge pill variant="primary" className={styles.Pill}>
             {skill}
           </Badge>
@@ -252,7 +244,9 @@ class Gigs extends Component {
                 <p className={styles.GigDescription}>
                   {this.state.currentGig.jobDes}
                 </p>
-                <div className={styles.BadgePillContainer}>{this.addBadges()}</div>
+                <div className={styles.BadgePillContainer}>
+                  {this.addBadges()}
+                </div>
                 <div className={styles.GigMap} />
               </Col>
             </Row>
