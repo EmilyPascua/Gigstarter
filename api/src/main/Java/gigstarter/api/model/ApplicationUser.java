@@ -13,7 +13,6 @@ public abstract class ApplicationUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-
     @Column(unique = true, nullable = false)
     @Email
     private String email;
@@ -48,5 +47,8 @@ public abstract class ApplicationUser {
     }
     public void setEnabled(boolean enabled){
         this.enabled = enabled;
+    }
+    public boolean isEnabled(){
+        return enabled;
     }
 }

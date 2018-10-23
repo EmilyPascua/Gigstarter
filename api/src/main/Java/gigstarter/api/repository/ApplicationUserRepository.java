@@ -8,8 +8,7 @@ import java.util.Optional;
 
 public interface ApplicationUserRepository extends JpaRepository<ApplicationUser, Long> {
 
-    ApplicationUser findByEmail(String email);
+    ApplicationUser findById(long id);
 
-    @Override
-    ApplicationUser getOne(Long aLong);
+    ApplicationUser findByEmail(String email);
 }

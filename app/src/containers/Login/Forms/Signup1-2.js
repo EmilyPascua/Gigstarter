@@ -534,7 +534,7 @@ const SignOneTwo = props => {
           {/* <Button onClick={() => validateForm().then(() => props.pg)}>
             Next
           </Button> */}
-          <Button>Finish</Button>
+          <Button onClick={() => validateForm().then(() => {props.submitToDB();console.log("in button")})}>Finish</Button>
         </Form>
       )}
     </Formik>
