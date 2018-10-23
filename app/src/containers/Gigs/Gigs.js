@@ -12,6 +12,7 @@ import Fuse from 'fuse.js'
 import GigModal from './GigModal/GigModal'
 import Badge from 'react-bootstrap/lib/Badge'
 import axios from 'axios'
+import {DB_URL} from '../../utils/utils'
 
 class Gigs extends Component {
   state = {
@@ -67,10 +68,12 @@ class Gigs extends Component {
       currentGig: firstGig
     })
 
-    let initObjs = this.state.gigObjsOriginal
+    let initObjs = []
 
     axios
-      .get('https://gigstarter-backend.herokuapp.com/jobs')
+      .get(DB_URL+'jobs', {headers: {
+        'Authorization': sessionStorage.getItem('sessionAuth')
+      }})
       .then(response => {
         response.data.content.map(job => {
           initObjs.push({
