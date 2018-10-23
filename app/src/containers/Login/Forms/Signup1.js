@@ -17,6 +17,11 @@ const SignOne = props => {
         } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
           errors.email = 'Invalid email address';
         }
+        if (!values.password) {
+          errors.password = 'Required'
+        } else if (values.password.length < 6) {
+          errors.password = 'Password has to be greater than 6 characters'
+        }
         if (!values.firstName) {
           errors.firstName = 'Required'
         }
@@ -25,9 +30,6 @@ const SignOne = props => {
         }
         if (!values.address1) {
           errors.address1 = 'Required'
-        }
-        if (!values.address2) {
-          errors.address2 = 'Required'
         }
         if (!values.city) {
           errors.city = 'Required'
@@ -50,6 +52,7 @@ const SignOne = props => {
         firstName: props.form.fname,
         lastName: props.form.lname,
         email: props.form.email,
+        password: props.form.password,
         dob: props.form.dob,
         address1: props.form.addr1,
         address2: props.form.addr2,
@@ -116,6 +119,20 @@ const SignOne = props => {
             </Form.Group>
           </Form.Row>
           <Form.Row>
+          <Form.Group as={Col} md="5">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Password"
+                name="password"
+                value={values.password}
+                onChange={handleChange}
+                isInvalid={!!errors.password}
+              />
+              <Form.Control.Feedback type="invalid">
+                {errors.password}
+              </Form.Control.Feedback>
+            </Form.Group>
             <Form.Group as={Col} md="3">
               <Form.Label>Date of Birth</Form.Label>
               <Form.Control
