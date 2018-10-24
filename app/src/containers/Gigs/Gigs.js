@@ -210,6 +210,7 @@ class Gigs extends Component {
                   </div>
                 </Col>
               </Row>
+              <div align="center">Employers - <a href=""><b>Post a job</b></a> or <a href=""><b>learn more</b></a></div>
             </Form>
           </div>
         </div>
