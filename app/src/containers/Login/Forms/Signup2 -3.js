@@ -6,7 +6,7 @@ import Card from "react-bootstrap/lib/Card";
 import styles from './css/Signup2.css';
 
 
-const SignTwo = props => {
+const SignTwoThree = props => {
   return (<div>
       <h3>Project Duration</h3>
       <p>How long will your project last?</p>
