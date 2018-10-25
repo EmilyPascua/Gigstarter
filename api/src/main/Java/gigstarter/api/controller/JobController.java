@@ -14,6 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.nio.file.AccessDeniedException;
 import java.util.Optional;
 
 @RestController
@@ -28,11 +29,6 @@ public class JobController {
 
     @Autowired
     private JobRepository jobRepository;
-
-    @GetMapping("/{jobId]/employer")
-    public EmployerUser getEmployer(@PathVariable Long jobId){
-        return jobService.employerUser(jobService.find(jobId));
-    }
 
     @GetMapping("/{jobId]")
     public Optional<Job> getJob(@PathVariable Long jobId){
@@ -59,9 +55,13 @@ public class JobController {
 
     }
 
-    @PutMapping("/jobs/{jobId}")
+    @PutMapping("/{jobId}")
     public Job updateJob(@PathVariable Long jobId,
                                    @Valid @RequestBody Job jobRequest) {
+        if(!authService.jobBelongsToUser(jobId)){
+            throw new ForbiddenActionException("Attempted to update a gig that did not belong to the authenticated " +
+                    "user.");
+        }
         return jobRepository.findById(jobId)
                 .map(job -> {
                     job.setTitle(jobRequest.getTitle());
@@ -71,8 +71,11 @@ public class JobController {
     }
 
 
-    @DeleteMapping("/jobs/{jobId}")
+    @DeleteMapping("/{jobId}")
     public ResponseEntity<?> deleteJob(@PathVariable Long jobId) {
+        if(!authService.jobBelongsToUser(jobId)){
+            throw new ForbiddenActionException("Attemped to delete a gig that did not belong to the authenticated user.");
+        }
         return jobRepository.findById(jobId)
                 .map(job -> {
                     jobRepository.delete(job);
@@ -80,7 +83,7 @@ public class JobController {
                 }).orElseThrow(() -> new ResourceNotFoundException("Job not found with id " + jobId));
     }
 
-    @PostMapping("/jobs/apply/{jobId}")
+    @PostMapping("/apply/{jobId}")
     public String applyForJob(@PathVariable Long jobId){
 
         if(!authService.isStudentUser()){

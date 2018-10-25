@@ -1,8 +1,10 @@
 package gigstarter.api.service;
 
+import gigstarter.api.exception.ForbiddenActionException;
 import gigstarter.api.exception.ResourceNotFoundException;
 import gigstarter.api.model.ApplicationUser;
 import gigstarter.api.model.EmployerUser;
+import gigstarter.api.model.Job;
 import gigstarter.api.model.StudentUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -14,6 +16,9 @@ public class AuthService {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    JobService jobService;
 
     public ApplicationUser getUser(){
 
@@ -38,6 +43,15 @@ public class AuthService {
     public boolean isStudentUser(){
         ApplicationUser user = getUser();
         return (user instanceof StudentUser);
+    }
+
+    public boolean jobBelongsToUser(Long jobId){
+        if(!isEmployerUser()){
+            throw new ForbiddenActionException("Only Employer users may interact with gigs.");
+        }
+        EmployerUser user = (EmployerUser) getUser();
+        Job dbJob = jobService.find(jobId);
+        return(dbJob.getEmployer().getId() == user.getId());
     }
 
 }
