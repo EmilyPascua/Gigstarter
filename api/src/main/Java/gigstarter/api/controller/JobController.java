@@ -1,7 +1,8 @@
 package gigstarter.api.controller;
 
+import gigstarter.api.exception.ForbiddenActionException;
 import gigstarter.api.exception.ResourceNotFoundException;
-import gigstarter.api.model.ApplicationUser;
+import gigstarter.api.model.EmployerUser;
 import gigstarter.api.model.Job;
 import gigstarter.api.model.StudentUser;
 import gigstarter.api.repository.JobRepository;
@@ -13,8 +14,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.Optional;
 
 @RestController
+@RequestMapping("/jobs")
 public class JobController {
 
     @Autowired
@@ -26,16 +29,34 @@ public class JobController {
     @Autowired
     private JobRepository jobRepository;
 
-    @GetMapping("/jobs")
+    @GetMapping("/{jobId]/employer")
+    public EmployerUser getEmployer(@PathVariable Long jobId){
+        return jobService.employerUser(jobService.find(jobId));
+    }
+
+    @GetMapping("/{jobId]")
+    public Optional<Job> getJob(@PathVariable Long jobId){
+        return jobRepository.findById(jobId);
+    }
+
+    @GetMapping()
     public Page<Job> getJobs(Pageable pageable) {
         return jobRepository.findAll(pageable);
     }
 
 
-    @PostMapping("/jobs")
-    public Job createJob(@Valid @RequestBody Job job) {
-        System.out.println(job.getCreatedAt());
-        return jobRepository.save(job);
+    @PostMapping("/create")
+    public String createJob(@Valid @RequestBody Job job) {
+
+        EmployerUser emp = null;
+        if(!authService.isEmployerUser()){
+            throw new ForbiddenActionException("Only employer users may post jobs.");
+        }
+        else{
+            emp = (EmployerUser) authService.getUser();
+            return jobService.create(job, emp);
+        }
+
     }
 
     @PutMapping("/jobs/{jobId}")
@@ -62,14 +83,16 @@ public class JobController {
     @PostMapping("/jobs/apply/{jobId}")
     public String applyForJob(@PathVariable Long jobId){
 
-        Job j = jobRepository.findById(jobId)
-                .orElseThrow(() -> new ResourceNotFoundException("Job not found with id " + jobId));
+        if(!authService.isStudentUser()){
+            throw new ForbiddenActionException("Only students may apply for gigs.");
+        }
 
-        ApplicationUser user = authService.getUser();
+        StudentUser user = (StudentUser) authService.getUser();
+        Job job = jobService.find(jobId);
+        jobService.apply(user, job);
 
-        jobService.apply(user, j);
+        String res = "You have applied for the job "+job.getTitle()+".";
 
-        String res = "You have applied for the job "+j.getTitle()+".";
         if(user.emailNotificationsEnabled()){
             res += " You should receive an e-mail shortly containing the details of the gig.";
         }

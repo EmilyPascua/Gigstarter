@@ -1,7 +1,9 @@
 package gigstarter.api.controller;
 
+import gigstarter.api.model.ApplicationUser;
 import gigstarter.api.model.EmployerUser;
 import gigstarter.api.model.StudentUser;
+import gigstarter.api.service.AuthService;
 import gigstarter.api.service.EmailVerificationService;
 import gigstarter.api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,16 @@ public class UserController {
 
     @Autowired
     private EmailVerificationService emailVerificationService;
+
+    @Autowired
+    private AuthService authService;
+
+    @GetMapping("/user")
+    public ApplicationUser getUser(){
+        ApplicationUser user = authService.getUser();
+        user.setPassword(null);
+        return user;
+    }
 
     @PostMapping("/sign-up/student")
     public String signUpStudent(@RequestBody StudentUser user) {
@@ -57,16 +69,21 @@ public class UserController {
     }
 
     @PostMapping("/email/disable")
-    public String disableEmailNotifications(@RequestHeader("Authorization") String auth){
-        boolean success = true;
+    public String disableEmailNotifications(){
 
-        if(success){
-            return "Email notifications have been disabled for ";
-        }
-        else{
-            return "Something went wrong! The server could not disable notifications  for" +
-                    " Please inform Gigstarter about this error at ";
-        }
+        ApplicationUser user = authService.getUser();
+        userService.setEmailNotifications(user, false);
+
+        return "E-mail notifications have been disabled for "+user.getEmail()+".";
+    }
+
+    @PostMapping("/email/enable")
+    public String enableEmailNotifications(){
+
+        ApplicationUser user = authService.getUser();
+        userService.setEmailNotifications(user, false);
+
+        return "E-mail notifications have been enabled for "+user.getEmail()+".";
     }
 
 }

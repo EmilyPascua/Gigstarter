@@ -2,9 +2,11 @@ package gigstarter.api.service;
 
 import gigstarter.api.exception.ResourceNotFoundException;
 import gigstarter.api.model.ApplicationUser;
+import gigstarter.api.model.EmployerUser;
+import gigstarter.api.model.StudentUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,10 +17,9 @@ public class AuthService {
 
     public ApplicationUser getUser(){
 
-        User user = (User) SecurityContextHolder.getContext().getAuthentication()
-                .getPrincipal();
 
-        String email = user.getUsername();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email = authentication.getName();
         ApplicationUser applicationUser = userService.findUser(email);
 
         if(applicationUser == null){
@@ -27,6 +28,16 @@ public class AuthService {
         else{
             return applicationUser;
         }
+    }
+
+    public boolean isEmployerUser(){
+        ApplicationUser user = getUser();
+        return (user instanceof EmployerUser);
+    }
+
+    public boolean isStudentUser(){
+        ApplicationUser user = getUser();
+        return (user instanceof StudentUser);
     }
 
 }

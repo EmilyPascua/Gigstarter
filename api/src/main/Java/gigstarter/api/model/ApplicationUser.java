@@ -28,7 +28,9 @@ public abstract class ApplicationUser {
     private String lastName;
 
     public ApplicationUser(){
+
         enabled = false;
+        emailNotifications = true;
     }
 
     public long getId() {
@@ -61,4 +63,11 @@ public abstract class ApplicationUser {
         return emailNotifications;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 }

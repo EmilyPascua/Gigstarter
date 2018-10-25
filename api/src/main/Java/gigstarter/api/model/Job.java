@@ -6,46 +6,33 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "jobs")
-public class Job extends AuditModel {
+public class Job{
+
   @Id
-  @GeneratedValue(generator = "job_generator")
-  @SequenceGenerator(name = "job_generator", sequenceName = "job_sequence", initialValue = 1000)
+  @GeneratedValue(strategy=GenerationType.AUTO)
   private Long id;
 
   @NotBlank
   @Size(min = 3, max = 100)
   private String title;
 
-  @Column(columnDefinition = "text")
+  @NotBlank
   private String description;
 
-  @Column(columnDefinition = "text")
   private String major;
 
-  @Column(columnDefinition = "text")
   private String industry;
 
-  @Column(columnDefinition = "text")
   private String location;
 
-  @Column(columnDefinition = "text")
-  private String posterId;
-
-  @Column(columnDefinition = "integer")
+  @NotNull
   private Integer payout;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name="idEmployer")
-  private EmployerUser employer;
+  @ManyToOne
+  private EmployerUser employerUser;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name="idStudent")
-  private StudentUser student;
-
-  public Job(EmployerUser employer){
-    this.employer = employer;
-  }
+  @ManyToOne
+  private StudentUser studentUser;
 
   // Getters and Setters
 
@@ -97,14 +84,6 @@ public class Job extends AuditModel {
     this.location = location;
   }
 
-  public String getPosterId() {
-    return posterId;
-  }
-
-  public void setPosterId(String posterId) {
-    this.posterId = posterId;
-  }
-
   public Integer getPayout() {
     return payout;
   }
@@ -114,18 +93,18 @@ public class Job extends AuditModel {
   }
 
   public EmployerUser getEmployer() {
-    return employer;
+    return employerUser;
   }
 
   public void setEmployer(EmployerUser employer) {
-    this.employer = employer;
+    this.employerUser = employer;
   }
 
-  public StudentUser getStudent() {
-    return student;
+  public StudentUser getStudentId() {
+    return studentUser;
   }
 
   public void setStudent(StudentUser student) {
-    this.student = student;
+    this.studentUser = student;
   }
 }
