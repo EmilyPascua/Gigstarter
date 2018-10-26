@@ -34,10 +34,10 @@ const SignTwoFive = props => {
         <hr></hr>
       </div>
       <div class="navigation">
-        <Button id="back" variant="danger"> Back </Button>
-        <Button id="next" variant="success"> Next</Button>
+        <Button id="back" variant="danger" onClick={()=>props.page(4)}> Back </Button>
+        <Button id="next" variant="success" onClick={()=>props.page(6)}> Next</Button>
       </div>
       </div>
   </div>);
 }
-export default SignTwo;
+export default SignTwoFive;

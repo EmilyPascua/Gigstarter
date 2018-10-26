@@ -32,10 +32,10 @@ const SignTwoTwo = props => {
       </table>
       <input type="skill" class="form-control" id="skillset"  placeholder="Don't see the skill set?"></input>
       <div class="navigation">
-        <Button id="back" variant="danger"> Back </Button>
-        <Button id="next" variant="success"> Next</Button>
+        <Button id="back" variant="danger" onClick={()=>props.page(1)}> Back </Button>
+        <Button id="next" variant="success" onClick={()=>props.page(3)}> Next</Button>
       </div>
       </div>
   </div>);
 }
-export default SignTwo;
+export default SignTwoTwo;

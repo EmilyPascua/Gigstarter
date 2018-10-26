@@ -45,7 +45,7 @@ const SignTwo = props => {
       </div>
       <div class="navigation">
         <Button id="back" variant="danger"> Back </Button>
-        <Button id="next" variant="success"> Next</Button>
+        <Button id="next" variant="success" onClick={()=>props.page(2)}> Next</Button>
       </div>
       </div>
   </div>);

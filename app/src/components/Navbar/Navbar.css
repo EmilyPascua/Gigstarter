@@ -29,6 +29,18 @@
   background-color: rgb(71, 125, 243);
 }
 
+.NavItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ProfPic {
+  align-items: center;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
 @media (max-width: 575.98px) {
   .NavbarCustom {
     width: 100vw !important;
