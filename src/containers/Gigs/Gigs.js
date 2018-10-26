@@ -87,6 +87,9 @@ class Gigs extends Component {
           })
           return 0
         })
+
+        initObjs.reverse()
+
         this.setState({
           gigObjsOriginal: initObjs,
           gigObjs: initObjs,
