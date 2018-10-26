@@ -167,7 +167,7 @@ class Gigs extends Component {
   }
 
   apply = (jobID, name) => {
-    alert("Job: "+name+" Applied")
+
     axios
     .post(DB_URL + 'jobs/apply/'+jobID, {} ,{
       headers: {
@@ -175,6 +175,7 @@ class Gigs extends Component {
       }
     })
     .then((response) => {
+      alert("Job: "+name+" Applied")
     })
     .catch(function(error) {
       console.log(error)

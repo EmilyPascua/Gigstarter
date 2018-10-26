@@ -81,6 +81,8 @@ class Gigs extends Component {
       )
       .then(response => {
         console.log("submitted")
+        window.location.replace(window.location.origin + '/gigs')
+
       })
       .catch(error => {
         console.log(error)
