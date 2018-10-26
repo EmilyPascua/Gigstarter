@@ -122,7 +122,7 @@ const SignOne = props => {
           <Form.Group as={Col} md="5">
               <Form.Label>Password</Form.Label>
               <Form.Control
-                type="text"
+                type="password"
                 placeholder="Password"
                 name="password"
                 value={values.password}
