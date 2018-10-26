@@ -1,11 +1,7 @@
-# Gigstarter
+To demo the website:
 
-When creating a new feature, make a branch out of develop and name it after that feature. Merge it into develop once the feature is working, the code is clean and you're done working on it.
+-Be in the app folder
 
-Commit often, once for each atomic change you make. 
+-Type in "npm run dev" on your terminal (make sure you have npm installed)
 
-Commit messages should be short and descriptive, such as "Fixed the user get endpoint not working." or "Added functionality to create a user."
-
-Do not write commit messages that does not specify what you changed, such as "Fixed some bugs." or "Added more stuff."
-
-These guidelines will help us work better together, and if errors occur it will be easier to rollback.
+-Navigate to "http://localhost:3000/" on your web browser, but it should automatically open one
