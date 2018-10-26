@@ -7,7 +7,7 @@ import LoginOne from './../Forms/Login1'
 import SignOne from './../Forms/Signup1'
 import SignOneTwo from './../Forms/Signup1-2'
 import axios from 'axios'
-import {DB_URL} from '../../../utils/utils'
+import { DB_URL } from '../../../utils/utils'
 
 class Login extends Component {
   state = {
@@ -125,63 +125,69 @@ class Login extends Component {
       major: this.state.form2.major,
       year: 1,
       industry: this.state.form2.industry,
-      school: this.state.form2.school,
-    }
-      console.log("SUBMIT TO DB,", finishedForm)
-    axios.post(DB_URL+'users/sign-up/student', {
-      email: this.state.form.email,
-      password: this.state.form.password,
-      firstName: this.state.form.fname,
-      lastName: this.state.form.lname,
-      major: this.state.form2.major,
-      year: 1,
-      industry: this.state.form2.industry,
       school: this.state.form2.school
-    })
-    .then((response) => {
-      console.log(response);
-      this.back()
-    })
-    .catch((error) => {
-      console.log(error);
-      this.back()
-    });
+    }
+    console.log('SUBMIT TO DB,', finishedForm)
+    axios
+      .post(DB_URL + 'users/sign-up/student', {
+        email: this.state.form.email,
+        password: this.state.form.password,
+        firstName: this.state.form.fname,
+        lastName: this.state.form.lname,
+        major: this.state.form2.major,
+        year: 1,
+        industry: this.state.form2.industry,
+        school: this.state.form2.school
+      })
+      .then(response => {
+        console.log(response)
+        this.back()
+      })
+      .catch(error => {
+        console.log(error)
+        this.back()
+      })
   }
 
   sendLogin = () => {
-    axios.post(DB_URL+'login', {
-      email: this.state.login.email,
-      password: this.state.login.password
-    })
-    .then((response) => {
-      sessionStorage.setItem('sessionAuth', response.headers.authorization);
-      this.props.history.push('/gigs')
-    })
-    .catch((error) => {
-      console.log(error);
-      console.log("Invalid user/pass")
-      this.setState({
-        login: {
-          error: true
-        }
+    axios
+      .post(DB_URL + 'login', {
+        email: this.state.login.email,
+        password: this.state.login.password
       })
-    });
+      .then(response => {
+        sessionStorage.setItem('sessionAuth', response.headers.authorization)
+        this.props.history.push('/gigs')
+      })
+      .catch(error => {
+        console.log(error)
+        console.log('Invalid user/pass')
+        this.setState({
+          login: {
+            email: this.state.login.email,
+            password: this.state.login.password,
+            error: true
+          }
+        })
+      })
   }
 
-  setLoginEmail = (e) => {
+  setLoginEmail = e => {
     this.setState({
       login: {
-        ...this.state.login,
-        email: e
+        email: e,
+        password: this.state.login.password,
+        error: this.state.login.error
       }
     })
   }
 
-  setLoginPass = (p) => {
+  setLoginPass = p => {
     this.setState({
       login: {
-        ...this.state.login,
-        password: p
+        email: this.state.login.email,
+        password: p,
+        error: this.state.login.error
       }
     })
   }
@@ -197,7 +203,12 @@ class Login extends Component {
               {this.state.signup1 ? (
                 this.pageSelector(this.state.page)
               ) : (
-                <LoginOne login={this.sendLogin} email={this.setLoginEmail} pass={this.setLoginPass} error={this.state.login.error}/>
+                <LoginOne
+                  login={this.sendLogin}
+                  email={this.setLoginEmail}
+                  pass={this.setLoginPass}
+                  error={this.state.login.error}
+                />
               )}
               {this.state.signup1 ? null : (
                 <Button

@@ -6,6 +6,7 @@ import Gigs from "../Gigs/Gigs";
 // import Login from "../Login/Login";
 import Hire from "../Login/SignUp/Hiring";
 import ForHire from "../Login/SignUp/ForHire";
+import GigCreation from "../Gigs/GigCreation/GigCreation"
 import {Switch,Route}from "react-router-dom";
 
 
@@ -20,6 +21,7 @@ class Layout extends Component {
         <Route path="/gigs" component={Gigs} />
         <Route path="/hiring" component={Hire} />
         <Route path="/forhire" component={ForHire} />
+        <Route path="/createGig" component={GigCreation} />
         {/* <Route path="/login" component={Login} /> */}
         </Switch>
       </div>

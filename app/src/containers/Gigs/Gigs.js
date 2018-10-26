@@ -12,22 +12,21 @@ import Fuse from 'fuse.js'
 import GigModal from './GigModal/GigModal'
 import Badge from 'react-bootstrap/lib/Badge'
 import axios from 'axios'
-import {DB_URL} from '../../utils/utils'
+import { DB_URL } from '../../utils/utils'
 
 class Gigs extends Component {
   state = {
     gigObjsOriginal: [
       {
         jobID: '0',
-        jobTitle: 'Event Cook',
-        jobCompany: 'Eat Smart',
-        jobDes:
-          'Our local organization is conducting a week-long fundraiser to raise as much money as possible to prepare for the music festival happening this weekend. We require a minimum of 2 hours per day for the week. The gig pays $300 in total.',
-        jobPay: 300,
-        jobPayType: 'onetime',
-        jobAddr1: '2199 Angeles Avenue',
-        jobTime: '1 day',
-        jobSkills: ['Cooking', 'Organization', 'Walking']
+        jobTitle: 'None',
+        jobCompany: 'None',
+        jobDes: 'Please login to view our available gig listings',
+        jobPay: 0,
+        jobPayType: 'x',
+        jobAddr1: 'Adress',
+        jobTime: '0 day',
+        jobSkills: ['0']
       },
       {
         jobID: '1',
@@ -56,7 +55,8 @@ class Gigs extends Component {
     ],
     gigObjs: [],
     currentGig: {},
-    modalShow: false
+    modalShow: false,
+    showAdd: false
   }
 
   componentDidMount = () => {
@@ -71,9 +71,7 @@ class Gigs extends Component {
     let initObjs = []
 
     axios
-      .get(DB_URL+'jobs', {headers: {
-        'Authorization': sessionStorage.getItem('sessionAuth')
-      }})
+      .get(DB_URL + 'jobs')
       .then(response => {
         response.data.content.map(job => {
           initObjs.push({
@@ -87,16 +85,19 @@ class Gigs extends Component {
             jobTime: '1 day',
             jobSkills: ['Cooking', 'Organization', 'Walking']
           })
-          return 0;
+          return 0
         })
         this.setState({
           gigObjsOriginal: initObjs,
-          gigObjs: initObjs
+          gigObjs: initObjs,
+          currentGig: initObjs[0]
         })
       })
       .catch(function(error) {
         console.log(error)
       })
+
+      this.checkUser()
   }
 
   setCurrentGig = id => {
@@ -140,6 +141,45 @@ class Gigs extends Component {
       ))
     }
     return null
+  }
+
+  checkUser = () => {
+    axios
+      .get(DB_URL + 'users/user', {
+        headers: {
+          Authorization: sessionStorage.getItem('sessionAuth')
+        }
+      })
+      .then((response) => {
+        if (response.data.businessName) {
+          this.setState({ showAdd: true })
+        } else {
+          this.setState({ showAdd: false })
+        }
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
+  }
+
+  goToCreate = () => {
+    this.props.history.push('/createGig')
+  }
+
+  apply = (jobID, name) => {
+    alert("Job: "+name+" Applied")
+    axios
+    .post(DB_URL + 'jobs/apply/'+jobID, {} ,{
+      headers: {
+        Authorization: sessionStorage.getItem('sessionAuth')
+      }
+    })
+    .then((response) => {
+    })
+    .catch(function(error) {
+      console.log(error)
+      alert("Employers cannot apply!")
+    })
   }
 
   render() {
@@ -195,13 +235,16 @@ class Gigs extends Component {
                     />
                   </Form.Group>
                   <div align={mq.matches ? 'right' : 'center'}>
-                    <Button
-                      variant="success"
-                      type="submit"
-                      className={styles.FindButton}
-                    >
-                      Find Gigs
-                    </Button>
+                    {this.state.showAdd ? (
+                      <Button
+                        variant="success"
+                        type="button"
+                        className={styles.FindButton}
+                        onClick={()=>this.goToCreate()}
+                      >
+                        Add a gig
+                      </Button>
+                    ) : null}
                   </div>
                 </Col>
               </Row>
@@ -250,6 +293,7 @@ class Gigs extends Component {
                 <div className={styles.BadgePillContainer}>
                   {this.addBadges()}
                 </div>
+                <Button className={styles.ApplyButton} variant="outline-success" onClick={()=>this.apply(this.state.currentGig.jobID,this.state.currentGig.jobTitle)}>Apply</Button>
                 <div className={styles.GigMap} />
               </Col>
             </Row>

@@ -6,7 +6,7 @@ import Card from "react-bootstrap/lib/Card";
 import styles from './css/Signup2.css';
 
 
-const SignTwo = props => {
+const SignTwoThree = props => {
   return (<div>
       <h3>Project Duration</h3>
       <p>How long will your project last?</p>
@@ -44,10 +44,10 @@ const SignTwo = props => {
         <hr></hr>
       </div>
       <div class="navigation">
-        <Button id="back" variant="danger"> Back </Button>
-        <Button id="next" variant="success" onClick={()=>props.page(2)}> Next</Button>
+        <Button id="back" variant="danger" onClick={()=>props.page(2)}> Back </Button>
+        <Button id="next" variant="success" onClick={()=>props.page(4)}> Next</Button>
       </div>
       </div>
   </div>);
 }
-export default SignTwo;
+export default SignTwoThree;

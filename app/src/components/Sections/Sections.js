@@ -37,31 +37,30 @@ const Sections = () => {
               outside of the classroom.
             </p>
           </Col>
-            <Col className={styles.Sec1Col1} xs={2}>
-              <img src={searchicon} alt="search" width="64px" />
-              <h3>Step 1</h3>
-              <p>
-                Scroll through hundreds of gig opportunities offered on
-                Gigstarter
-              </p>
-            </Col>
-            <Col className={styles.Sec1Col2} xs={2}>
-              <img src={envelope} alt="envelope" width="64px" />
-              <h3>Step 2</h3>
-              <p>
-                If you show interest in a gig, contact the employer to discover
-                the details of the job
-              </p>
-            </Col>
-            <Col className={styles.Sec1Col3} xs={2}>
-              <img src={growth} alt="money" width="64px" />
-              <h3>Step 3</h3>
-              <p>
-                Get paid for the work you have done! Aside from the extra money,
-                you have now expanded your resume in a positive & professional
-                direction
-              </p>
-            </Col>
+          <Col className={styles.Sec1Col1} xs={2}>
+            <img src={searchicon} alt="search" width="64px" />
+            <h3>Step 1</h3>
+            <p>
+              Scroll through hundreds of gig opportunities offered on Gigstarter
+            </p>
+          </Col>
+          <Col className={styles.Sec1Col2} xs={2}>
+            <img src={envelope} alt="envelope" width="64px" />
+            <h3>Step 2</h3>
+            <p>
+              If you show interest in a gig, contact the employer to discover
+              the details of the job
+            </p>
+          </Col>
+          <Col className={styles.Sec1Col3} xs={2}>
+            <img src={growth} alt="money" width="64px" />
+            <h3>Step 3</h3>
+            <p>
+              Get paid for the work you have done! Aside from the extra money,
+              you have now expanded your resume in a positive & professional
+              direction
+            </p>
+          </Col>
         </Row>
       </Container>
       <Container className={styles.Sec3}>
@@ -97,7 +96,7 @@ const Sections = () => {
       </Container>
       <Container className={styles.Sec2}>
         <Row className={styles.Sec2Row1}>
-        <Col className={styles.Sec2Col5} xs={6}>
+          <Col className={styles.Sec2Col5} xs={6}>
             <h1>The Big Picture</h1>
             <p>
               Providing students with practical experience would not be possible
@@ -159,10 +158,18 @@ const Sections = () => {
         <div className={styles.SignCont}>
           <div className={styles.Sign1}>
             <img src={businessman} alt="businessman" width="256px" />
-            <Button className={styles.SignBut1} href="forhire" variant="success">
+            <Button
+              className={styles.SignBut1}
+              href="forhire"
+              variant="success"
+            >
               I am looking for a Gig.
             </Button>
-            <Button className={styles.SignBut1m} href="forhire" variant="success">
+            <Button
+              className={styles.SignBut1m}
+              href="forhire"
+              variant="success"
+            >
               For Hire
             </Button>
           </div>
@@ -172,7 +179,11 @@ const Sections = () => {
             <Button className={styles.SignBut2} href="hiring" variant="primary">
               I am looking for Talent.
             </Button>
-            <Button className={styles.SignBut2m} href="hiring" variant="primary">
+            <Button
+              className={styles.SignBut2m}
+              href="hiring"
+              variant="primary"
+            >
               Hiring
             </Button>
           </div>
@@ -239,11 +250,29 @@ const Sections = () => {
                 <p>Gigstarter</p>
               </div>
             </Col>
-            <Col className={styles.FooterAbout} style={{ textAlign: 'right' }}> ABOUT US</Col>
+            <Col className={styles.FooterAbout} style={{ textAlign: 'right' }}>  
+              <h1>ABOUT US</h1>
+              <br />
+              <p>
+                Welcome to Gigstarter, your number one source for the best gigs.
+                We're dedicated to giving you the very best gigs, with a focus
+                on dependability, availability, and uniqueness. We hope you
+                enjoy our products as much as we enjoy offering them to you. If
+                you have any questions or comments, please don't hesitate to
+                contact us.
+                <br />
+                Sincerely,
+                <br />
+                Gigstarter
+              </p>
+            </Col>
           </Row>
           <Row className={styles.FooterBottom}>
             <Col>© 2018 Gigstarter Inc.</Col>
-            <Col className={styles.FooterStuff} style={{ textAlign: 'right' }}>STUFF</Col>
+            <Col
+              className={styles.FooterStuff}
+              style={{ textAlign: 'right' }}
+            />
           </Row>
         </Container>
       </div>

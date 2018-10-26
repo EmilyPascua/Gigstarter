@@ -101,6 +101,10 @@
   border: 2px solid rgb(209, 209, 209);
 }
 
+.ApplyButton {
+  float: right;
+}
+
 @media (max-width: 575.98px) {
   .ContainerBottom{
     margin-top: 100px;
