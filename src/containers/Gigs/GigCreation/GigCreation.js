@@ -17,6 +17,8 @@ import Col from 'react-bootstrap/lib/Col'
 import Row from 'react-bootstrap/lib/Row'
 
 import styles from './GigCreation.css'
+import CurrencyInput from 'react-currency-masked-input'
+
 
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
@@ -150,12 +152,17 @@ class Gigs extends Component {
                 </Row>
                 <br />
                 <br />
-                <b>Certification/Desired Skills</b> (Optional)
+                <b>Certification/Desired Skills</b>
                 <Form.Control
                   id="gigSkills"
                   type="gigSkills"
                   placeholder="Hardworker, Adaptable, Tech-savy..."
                 />
+                <br />
+                <br />
+                <b>Payout</b>
+                <br />
+                $<CurrencyInput name="myInput" id="payout" required />
                 <br />
                 <br />
                 <b>Location</b>
@@ -221,7 +228,7 @@ class Gigs extends Component {
                 </Form.Control>
                 <br />
                 <br />
-                <b>Will your project be handeled on-site or remote?</b>
+                <b>Will your project be handled on-site or remote?</b>
                 <Form.Control
                   as="select"
                   type="text"
@@ -261,6 +268,8 @@ class Gigs extends Component {
                   type="prefMajors"
                   placeholder="Computer Science, Computer Engineering, Electrical Engineering..."
                 />
+                <br />
+                <br />
                 <Button
                   variant="success"
                   type="button"
