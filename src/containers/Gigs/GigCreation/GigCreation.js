@@ -17,7 +17,8 @@ import Col from 'react-bootstrap/lib/Col'
 import Row from 'react-bootstrap/lib/Row'
 
 import styles from './GigCreation.css'
-
+import InputGroup from "react-bootstrap/lib/InputGroup"
+import FormControl from "react-bootstrap/lib/FormControl"
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -62,6 +63,7 @@ class Gigs extends Component {
   }
 
   submit = () => {
+    console.log(document.getElementById('gigPayout').value)
     axios
       .post(
         DB_URL + 'jobs/create',
@@ -69,7 +71,7 @@ class Gigs extends Component {
           title: document.getElementById('gigName').value,
           major: document.getElementById('prefMajors').value,
           industry: 'N/A',
-          payout: 6,
+          payout: parseInt(document.getElementById('gigPayout').value,10),
           description: document.getElementById('gigDescription').value,
           location: document.getElementById('gigLocation').value
         },
@@ -80,12 +82,11 @@ class Gigs extends Component {
         }
       )
       .then(response => {
-        console.log("submitted")
         window.location.replace(window.location.origin + '/gigs')
-
       })
       .catch(error => {
         console.log(error)
+        alert(error.response.data.message)
       })
   }
 
@@ -150,12 +151,25 @@ class Gigs extends Component {
                 </Row>
                 <br />
                 <br />
-                <b>Certification/Desired Skills</b> (Optional)
+                <b>Certification/Desired Skills</b>
                 <Form.Control
                   id="gigSkills"
                   type="gigSkills"
                   placeholder="Hardworker, Adaptable, Tech-savy..."
                 />
+                <br />
+                <br />
+                <b>Payout</b>
+                <br />
+                <InputGroup className="mb-3">
+                  <InputGroup.Prepend>
+                    <InputGroup.Text>$</InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <FormControl aria-label="Amount (to the nearest dollar)" className={styles.PayoutInput} id="gigPayout"/>
+                  <InputGroup.Append>
+                    <InputGroup.Text>.00</InputGroup.Text>
+                  </InputGroup.Append>
+                </InputGroup>
                 <br />
                 <br />
                 <b>Location</b>
@@ -221,7 +235,7 @@ class Gigs extends Component {
                 </Form.Control>
                 <br />
                 <br />
-                <b>Will your project be handeled on-site or remote?</b>
+                <b>Will your project be handled on-site or remote?</b>
                 <Form.Control
                   as="select"
                   type="text"
@@ -261,6 +275,8 @@ class Gigs extends Component {
                   type="prefMajors"
                   placeholder="Computer Science, Computer Engineering, Electrical Engineering..."
                 />
+                <br />
+                <br />
                 <Button
                   variant="success"
                   type="button"

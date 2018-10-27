@@ -77,7 +77,7 @@ class Gigs extends Component {
           initObjs.push({
             jobID: job.id.toString(),
             jobTitle: job.title,
-            jobCompany: job.posterId,
+            jobCompany: job.employer.businessName,
             jobDes: job.description,
             jobPay: job.payout,
             jobPayType: 'onetime',
@@ -181,8 +181,8 @@ class Gigs extends Component {
       alert("Job: "+name+" Applied")
     })
     .catch(function(error) {
-      console.log(error)
-      alert("Employers cannot apply!")
+      console.log(error.response)
+      alert(error.response.data.message)
     })
   }
 
