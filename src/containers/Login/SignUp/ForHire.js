@@ -141,11 +141,19 @@ class Login extends Component {
       })
       .then(response => {
         console.log(response)
-        this.back()
+        window.location.replace(window.location.origin + '/verify')
       })
       .catch(error => {
         console.log(error)
-        this.back()
+        if (
+          error.response.data.status === 500 &&
+          error.response.data.message ===
+            'could not execute statement; SQL [n/a]; constraint [application_user_pkey]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement'
+        ) {
+          window.location.replace(window.location.origin + '/verify')
+        } else {
+          alert(error.response.data.message)
+        }
       })
   }
 

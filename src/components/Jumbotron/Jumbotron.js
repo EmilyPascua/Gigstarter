@@ -12,8 +12,8 @@ const Jumbo = ({ isVisible }) => {
     <div>
       <Jumbotron fluid className={styles.Jumbo} >
         <Container className={styles.Container}>
-          <h1 className={styles.title}>Welcome to GigStarter</h1>
-          <div className={styles.des}>An organization’s mission statement should clearly communicate what it is that they do. Many mission statements succumb to an overuse of words in general, but especially jargon.  Good mission statements should be clear, concise, and useful. Some might also add “inspiring” to the list of descriptors. We don’t altogether disagree, but we find that including this as an upfront criteria often ends up with a Frankenstein that is a part mission, part vision statement (desired end-state), and almost always too long.</div>
+          <h1 className={styles.title}>Welcome to Gigstarter</h1>
+          <div className={styles.des}>"Empowering generations through independent work."</div>
           <div>
             <Button variant="outline-primary" size="lg" className={styles.Button1} onClick={() => scroller.scrollTo("Sec6", {
               duration: 1000,
