@@ -54,7 +54,17 @@ class Gigs extends Component {
       }
     ],
     gigObjs: [],
-    currentGig: {},
+    currentGig: {
+      jobID: '0',
+      jobTitle: 'None',
+      jobCompany: 'None',
+      jobDes: 'Please login to view our available gig listings',
+      jobPay: 0,
+      jobPayType: 'x',
+      jobAddr1: 'Adress',
+      jobTime: '0 day',
+      jobSkills: ['0']
+    },
     modalShow: false,
     showAdd: false
   }
@@ -73,6 +83,7 @@ class Gigs extends Component {
     axios
       .get(DB_URL + 'jobs')
       .then(response => {
+        response.data.content[0] ?
         response.data.content.map(job => {
           initObjs.push({
             jobID: job.id.toString(),
@@ -86,7 +97,7 @@ class Gigs extends Component {
             jobSkills: ['Cooking', 'Organization', 'Walking']
           })
           return 0
-        })
+        }) : console.log('no jobs found')
 
         initObjs.reverse()
 
@@ -96,7 +107,7 @@ class Gigs extends Component {
           currentGig: initObjs[0]
         })
       })
-      .catch(function(error) {
+      .catch((error) => {
         console.log(error)
       })
 
