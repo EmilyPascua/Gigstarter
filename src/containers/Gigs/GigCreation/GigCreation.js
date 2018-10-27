@@ -17,8 +17,8 @@ import Col from 'react-bootstrap/lib/Col'
 import Row from 'react-bootstrap/lib/Row'
 
 import styles from './GigCreation.css'
-import InputGroup from "react-bootstrap/lib/InputGroup"
-import FormControl from "react-bootstrap/lib/FormControl"
+import InputGroup from 'react-bootstrap/lib/InputGroup'
+import FormControl from 'react-bootstrap/lib/FormControl'
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -71,9 +71,22 @@ class Gigs extends Component {
           title: document.getElementById('gigName').value,
           major: document.getElementById('prefMajors').value,
           industry: 'N/A',
-          payout: parseInt(document.getElementById('gigPayout').value,10),
+          payout: parseInt(document.getElementById('gigPayout').value, 10),
           description: document.getElementById('gigDescription').value,
-          location: document.getElementById('gigLocation').value
+          location: document.getElementById('gigLocation').value,
+          startDate: 'Dec 23, 2018',
+          endDate: 'Jan 24, 2019',
+          expectedHours: parseInt(document.getElementById('expectedHours').value, 10),
+          desiredSkills:
+          document.getElementById('gigSkills').value,
+          address1: '123 Fake St',
+          address2: 'Apt #203',
+          city: 'Los Angeles',
+          state: 'CA',
+          zip: '90001',
+          locationType: document.getElementById('locationSite').value,
+          educationLevel: 'Bachelors',
+          payType: document.getElementById('educationLevel').value
         },
         {
           headers: {
@@ -165,7 +178,11 @@ class Gigs extends Component {
                   <InputGroup.Prepend>
                     <InputGroup.Text>$</InputGroup.Text>
                   </InputGroup.Prepend>
-                  <FormControl aria-label="Amount (to the nearest dollar)" className={styles.PayoutInput} id="gigPayout"/>
+                  <FormControl
+                    aria-label="Amount (to the nearest dollar)"
+                    className={styles.PayoutInput}
+                    id="gigPayout"
+                  />
                   <InputGroup.Append>
                     <InputGroup.Text>.00</InputGroup.Text>
                   </InputGroup.Append>
@@ -241,9 +258,10 @@ class Gigs extends Component {
                   type="text"
                   placeholder="locationSite"
                   name="locationSite"
+                  id="locationSite"
                 >
-                  <option value="onSite">On-Site</option>
-                  <option value="remote">Remote</option>
+                  <option value="On-Site">On-Site</option>
+                  <option value="Remote">Remote</option>
                 </Form.Control>
                 <br />
                 <br />
@@ -260,12 +278,13 @@ class Gigs extends Component {
                   type="text"
                   placeholder="educationlevel"
                   name="educationlevel"
+                  id="educationLevel"
                 >
                   <option>Choose...</option>
-                  <option value="bachelors">Bachelor's</option>
-                  <option value="masters">Masters's</option>
-                  <option value="other">Other</option>
-                  <option value="none">None</option>
+                  <option value="Bachelor's">Bachelor's</option>
+                  <option value="Masters's">Masters's</option>
+                  <option value="Other">Other</option>
+                  <option value="None">None</option>
                 </Form.Control>
                 <br />
                 <br />
