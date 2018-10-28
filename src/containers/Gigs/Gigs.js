@@ -298,9 +298,9 @@ class Gigs extends Component {
           <div className={styles.BottomContent}>
             <Row className="show-grid">
               <Col lg={6} md={6}>
-                <hr />
+                <div className={styles.SearchResult}>
                 Search Results: {this.state.gigObjs.length}
-                <hr />
+                </div>
                 <div className={styles.GigList}>
                   {this.state.gigObjs.map(job => (
                     <div
