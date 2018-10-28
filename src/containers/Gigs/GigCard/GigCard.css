@@ -76,8 +76,10 @@
 }
 
 .Item{
-  margin: 5px;
-  transition: all .2s ease-in;
+  margin: 10px 10px 10px 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in;
+  border: none;
 }
 
 .Item:hover {

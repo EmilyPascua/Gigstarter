@@ -29,6 +29,7 @@ class Gigs extends Component {
     super(props)
     this.state = {
       startDate: moment(),
+      endDate: moment(),
       isBusiness: false
     }
     this.handleChange = this.handleChange.bind(this)
@@ -56,44 +57,48 @@ class Gigs extends Component {
       })
   }
 
-  handleChange(date) {
+  handleChange = date => {
     this.setState({
       startDate: date
     })
   }
 
+  handleChange2 = date => {
+    this.setState({
+      endDate: date
+    })
+  }
+
   submit = () => {
-    console.log(document.getElementById('gigPayout').value)
+    const data = {
+      title: document.getElementById('gigName').value,
+      major: document.getElementById('prefMajors').value,
+      industry: 'N/A',
+      payout: parseInt(document.getElementById('gigPayout').value, 10),
+      description: document.getElementById('gigDescription').value,
+      location: document.getElementById('gigLocation').value,
+      startDate: document.getElementById('startDate').value,
+      endDate: document.getElementById('endDate').value,
+      expectedHours: parseInt(
+        document.getElementById('expectedHours').value,
+        10
+      ),
+      desiredSkills: document.getElementById('gigSkills').value,
+      address1: '123 Fake St',
+      address2: 'Apt #203',
+      city: 'Los Angeles',
+      state: 'CA',
+      zip: '90001',
+      locationType: document.getElementById('locationSite').value,
+      educationLevel: document.getElementById('educationLevel').value,
+      payType: 'one-time'
+    }
     axios
-      .post(
-        DB_URL + 'jobs/create',
-        {
-          title: document.getElementById('gigName').value,
-          major: document.getElementById('prefMajors').value,
-          industry: 'N/A',
-          payout: parseInt(document.getElementById('gigPayout').value, 10),
-          description: document.getElementById('gigDescription').value,
-          location: document.getElementById('gigLocation').value,
-          startDate: 'Dec 23, 2018',
-          endDate: 'Jan 24, 2019',
-          expectedHours: parseInt(document.getElementById('expectedHours').value, 10),
-          desiredSkills:
-          document.getElementById('gigSkills').value,
-          address1: '123 Fake St',
-          address2: 'Apt #203',
-          city: 'Los Angeles',
-          state: 'CA',
-          zip: '90001',
-          locationType: document.getElementById('locationSite').value,
-          educationLevel: 'Bachelors',
-          payType: document.getElementById('educationLevel').value
-        },
-        {
-          headers: {
-            Authorization: sessionStorage.getItem('sessionAuth')
-          }
+      .post(DB_URL + 'jobs/create', data, {
+        headers: {
+          Authorization: sessionStorage.getItem('sessionAuth')
         }
-      )
+      })
       .then(response => {
         window.location.replace(window.location.origin + '/gigs')
       })
@@ -149,8 +154,8 @@ class Gigs extends Component {
                     <b>End Date</b>
                     <DatePicker
                       id="endDate"
-                      selected={this.state.startDate}
-                      onChange={this.handleChange}
+                      selected={this.state.endDate}
+                      onChange={this.handleChange2}
                     />
                   </Col>
                   <Col>
