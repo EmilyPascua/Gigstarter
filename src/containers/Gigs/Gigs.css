@@ -158,6 +158,7 @@ Gigs {
   margin-bottom: 20px;
   background-color: white;
   overflow: scroll;
+  height: 75vh;
 }
 
 .SearchResult {
