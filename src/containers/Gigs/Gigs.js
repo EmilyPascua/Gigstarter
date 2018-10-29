@@ -346,7 +346,7 @@ class Gigs extends Component {
                   {this.state.currentGig.jobEnd}
                 </p>
                 <p className={styles.GigDescription}>
-                  {this.state.currentGig.jobDes}
+                {<div dangerouslySetInnerHTML={{__html: this.state.currentGig.jobDes}} />}
                 </p>
                 <div className={styles.JobMoreInfo}>
                   <p>Job Details</p>
