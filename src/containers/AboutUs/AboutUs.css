@@ -6,6 +6,12 @@
     
   }
 
+h3{
+    align-content: center !important;
+    text-align: center !important;
+
+}
+
 .Header{
     margin-top: 56px;
     display: flex;

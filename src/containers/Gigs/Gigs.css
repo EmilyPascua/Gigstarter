@@ -80,6 +80,10 @@
 
 .GigList{
   margin-bottom: 50px;
+  height: 70vh;
+  overflow: scroll;
+  border: 2px solid lightgrey;
+  border-radius: 5px;
 }
 
 .jobCard {
@@ -89,6 +93,7 @@
 .BadgePillContainer {
   display: flex;
   flex-direction: row;
+  display: none;
 }
 .BadgePill {
   margin: 0 5px 0 5px;
@@ -122,3 +127,4 @@
     margin-top: 15px;
   }
 }
+

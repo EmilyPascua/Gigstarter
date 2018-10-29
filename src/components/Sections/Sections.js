@@ -30,10 +30,10 @@ const Sections = () => {
           <Col className={styles.Bodyone} xs={6}>
             <h1>The Best Career Building Platform</h1>
             <p>
-              GigStarter is aimed to provide professional experiences within the
-              field these students are studying. Our team has an extensive
-              customer-interview record and 87% have claimed they feel
-              unprepared for the workforce due to their lack of experience
+              Gigstarter is aimed to provide professional experiences within the
+              field that college students are studying. Our team has  an extensive
+              student-interview record and 87% have claimed they feel
+              unprepared for the workforce due to their lack of practical experience
               outside of the classroom.
             </p>
           </Col>
@@ -56,9 +56,7 @@ const Sections = () => {
             <img src={growth} alt="money" width="64px" />
             <h3>Step 3</h3>
             <p>
-              Get paid for the work you have done! Aside from the extra money,
-              you have now expanded your resume in a positive & professional
-              direction
+              Once the gig is complete, get paid for the work you have done!
             </p>
           </Col>
         </Row>
@@ -75,7 +73,7 @@ const Sections = () => {
                 Gain real-world experience <Emoji symbol="🌎" label="globe" />
               </ListGroup.Item>
               <ListGroup.Item variant="success">
-                Make primary/secondary income{' '}
+                Make additional income
                 <Emoji symbol="💰" label="money" />
               </ListGroup.Item>
             </ListGroup>
@@ -200,15 +198,14 @@ const Sections = () => {
             </Card.Title>
             <Card.Text>
               <p>5151 State University Dr, Los Angeles, CA 90032</p>
-              <p>1.800.555.555</p>
-              <p>contact@email.com</p>
+              <p>1.619.646.5321</p>
+              <p>feedback.gigstarter@gmail.com</p>
             </Card.Text>
           </Card.Body>
         </Card>
 
-        <Card bg="secondary" border="success" className={styles.Sec5Card2}>
+        {/* <Card bg="secondary" border="success" className={styles.Sec5Card2}>
           <Card.Header>
-            {' '}
             <h1>Leave A Message</h1>
           </Card.Header>
           <Card.Body>
@@ -227,7 +224,7 @@ const Sections = () => {
               </Form.Group>
             </Form>
           </Card.Body>
-        </Card>
+        </Card> */}
       </div>
       <div className={styles.Sec7} id="Sec7">
         <Container className={styles.Sec7Cont}>
@@ -260,6 +257,7 @@ const Sections = () => {
                 enjoy our products as much as we enjoy offering them to you. If
                 you have any questions or comments, please don't hesitate to
                 contact us.
+                <br />
                 <br />
                 Sincerely,
                 <br />

@@ -99,34 +99,43 @@ class Login extends Component {
         })
         .then(response => {
           console.log(response)
-          this.back()
+          window.location.replace(window.location.origin + '/verify')
         })
         .catch(error => {
-          console.log(error)
-          this.back()
+          console.log(error.response)
+          if (
+            error.response.data.status === 500 &&
+            error.response.data.message ===
+              'could not execute statement; SQL [n/a]; constraint [application_user_pkey]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement'
+          ) {
+            window.location.replace(window.location.origin + '/verify')
+          } else {
+            alert(error.response.data.message)
+          }
         })
     }
   }
 
   sendLogin = () => {
-    axios.post(DB_URL+'login', {
-      email: this.state.login.email,
-      password: this.state.login.password
-    })
-    .then((response) => {
-      sessionStorage.setItem('sessionAuth', response.headers.authorization);
-      this.props.history.push('/gigs')
-    })
-    .catch((error) => {
-      console.log(error);
-      console.log("Invalid user/pass")
-      this.setState({
-        login: {
-          ...this.state.login,
-          error: true
-        }
+    axios
+      .post(DB_URL + 'login', {
+        email: this.state.login.email,
+        password: this.state.login.password
       })
-    });
+      .then(response => {
+        sessionStorage.setItem('sessionAuth', response.headers.authorization)
+        this.props.history.push('/gigs')
+      })
+      .catch(error => {
+        console.log(error)
+        console.log('Invalid user/pass')
+        this.setState({
+          login: {
+            ...this.state.login,
+            error: true
+          }
+        })
+      })
   }
 
   changePages = e => {
@@ -135,7 +144,7 @@ class Login extends Component {
     })
   }
 
-  setLoginEmail = (e) => {
+  setLoginEmail = e => {
     this.setState({
       login: {
         ...this.state.login,
@@ -144,7 +153,7 @@ class Login extends Component {
     })
   }
 
-  setLoginPass = (p) => {
+  setLoginPass = p => {
     this.setState({
       login: {
         ...this.state.login,
@@ -164,7 +173,12 @@ class Login extends Component {
               {this.state.signup2 ? (
                 this.setPages(this.state.page)
               ) : (
-                <LoginTwo login={this.sendLogin} email={this.setLoginEmail} pass={this.setLoginPass} error={this.state.login.error}/>
+                <LoginTwo
+                  login={this.sendLogin}
+                  email={this.setLoginEmail}
+                  pass={this.setLoginPass}
+                  error={this.state.login.error}
+                />
               )}
               {this.state.signup2 ? null : (
                 <Button

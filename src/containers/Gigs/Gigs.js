@@ -1,3 +1,5 @@
+/*global google*/
+
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Gigs.css'
@@ -12,7 +14,10 @@ import Fuse from 'fuse.js'
 import GigModal from './GigModal/GigModal'
 import Badge from 'react-bootstrap/lib/Badge'
 import axios from 'axios'
+import Geosuggest from 'react-geosuggest'
+import './Geosuggest.css' 
 import { DB_URL } from '../../utils/utils'
+
 
 class Gigs extends Component {
   state = {
@@ -54,10 +59,23 @@ class Gigs extends Component {
       }
     ],
     gigObjs: [],
-    currentGig: {},
+    currentGig: {
+      jobID: '0',
+      jobTitle: 'None',
+      jobCompany: 'None',
+      jobDes: 'Please login to view our available gig listings',
+      jobPay: 0,
+      jobPayType: 'x',
+      jobAddr1: 'Adress',
+      jobTime: '0 day',
+      jobSkills: ['0']
+    },
     modalShow: false,
     showAdd: false
   }
+  onSuggestSelect = (place: Suggest) => {
+    console.log(place);
+  };
 
   componentDidMount = () => {
     const firstGig =
@@ -73,11 +91,12 @@ class Gigs extends Component {
     axios
       .get(DB_URL + 'jobs')
       .then(response => {
+        response.data.content[0] ?
         response.data.content.map(job => {
           initObjs.push({
             jobID: job.id.toString(),
             jobTitle: job.title,
-            jobCompany: job.posterId,
+            jobCompany: job.employer.businessName,
             jobDes: job.description,
             jobPay: job.payout,
             jobPayType: 'onetime',
@@ -86,7 +105,7 @@ class Gigs extends Component {
             jobSkills: ['Cooking', 'Organization', 'Walking']
           })
           return 0
-        })
+        }) : console.log('no jobs found')
 
         initObjs.reverse()
 
@@ -96,7 +115,7 @@ class Gigs extends Component {
           currentGig: initObjs[0]
         })
       })
-      .catch(function(error) {
+      .catch((error) => {
         console.log(error)
       })
 
@@ -181,8 +200,8 @@ class Gigs extends Component {
       alert("Job: "+name+" Applied")
     })
     .catch(function(error) {
-      console.log(error)
-      alert("Employers cannot apply!")
+      console.log(error.response)
+      alert(error.response.data.message)
     })
   }
 
@@ -237,6 +256,7 @@ class Gigs extends Component {
                       type="location"
                       placeholder="Los Angeles, CA"
                     />
+
                   </Form.Group>
                   <div align={mq.matches ? 'right' : 'center'}>
                     {this.state.showAdd ? (
@@ -257,12 +277,25 @@ class Gigs extends Component {
         </div>
 
         <div className={styles.ContainerBottom}>
+
           <div className={styles.BottomContent}>
             <Row className="show-grid">
               <Col lg={6} md={6}>
                 <hr />
                 Search Results: {this.state.gigObjs.length}
                 <hr />
+                                    <br />
+                <br />
+                <b>Gig Address</b>
+               
+               <Geosuggest
+                ref={el=>this._geoSuggest=el}
+                placeholder="Start typing!"
+                onSuggestSelect={this.onSuggestSelect}
+                location={new google.maps.LatLng(53.558572, 9.9278215)}
+                radius="20" />
+
+
                 <div className={styles.GigList}>
                   {this.state.gigObjs.map(job => (
                     <div
@@ -294,6 +327,10 @@ class Gigs extends Component {
                 <p className={styles.GigDescription}>
                   {this.state.currentGig.jobDes}
                 </p>
+
+                <div>
+                </div>   
+
                 <div className={styles.BadgePillContainer}>
                   {this.addBadges()}
                 </div>

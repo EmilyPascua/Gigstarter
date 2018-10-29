@@ -41,7 +41,7 @@ class About extends Component {
             <h3>Step 2</h3>
             If you show interest in a gig, contact the employer to discover the details of the job.</Col>
             <Col><h1><i class="fa fa-dollar"></i></h1>
-            <h3>Step 2</h3>
+            <h3>Step 3</h3>
             Get paid for the work you have done! Aside from the extra money, you have now expanded your resume in a positive and professional direction.</Col>
           </Row>
         </div>
