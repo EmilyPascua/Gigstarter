@@ -48,29 +48,11 @@ class About extends Component {
           </Row>
         </div>
         <div className={styles.Container}>
-         <Row><Col><h1>Creative Team</h1>
+         <Row><Col><h1>Our Team</h1>
         We are a group of dedicated, passionate, and driven individuals working<br></br>towards the common goal of providing professional work experience for students
          </Col></Row>
          </div>
-        <div className={styles.Container}>
-          <Row>
-            <Col><img src={Martin} alt="martinPotrait" width="200px" />
-            <h3>Martin Tejeda</h3>
-            </Col>
-            <Col><img src={Marco} alt="marcoPotrait" width="200px" />
-            <h3>Marco Garza</h3>
-            </Col>
-            <Col><img src={Alex} alt="alexPotrait" width="200px" />
-            <h3>Alex Lam</h3>
-            </Col>
-            <Col><img src={Oscar} alt="oscarPotrait" width="200px" />
-            <h3>Oscar Aguayo</h3>
-            </Col>
-          </Row>
-        </div>
         <br/>
-        <h1>Engineering Team</h1>
-        <p>From developing new features to designing the layouts, the engineering team is always working hard to provide you with the best experience.</p>
         <Row><Col><img src={Team} alt="team" width="50%"/></Col></Row>
         <p>From left to right: Emily, Alex, Lisa, Oscar, Calvin, Martin, Marco</p>
       </div>
