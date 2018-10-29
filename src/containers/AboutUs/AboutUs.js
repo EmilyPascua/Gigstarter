@@ -41,7 +41,7 @@ class About extends Component {
             <h3>Step 2</h3>
             If you show interest in a gig, contact the employer to discover the details of the job.</Col>
             <Col><h1><i class="fa fa-dollar"></i></h1>
-            <h3>Step 2</h3>
+            <h3>Step 3</h3>
             Get paid for the work you have done! Aside from the extra money, you have now expanded your resume in a positive and professional direction.</Col>
           </Row>
         </div>
@@ -54,16 +54,16 @@ class About extends Component {
           <Row>
             <Col><img src={Martin} alt="martinPotrait" width="200px" />
             <h3>Martin Tejeda</h3>
-            Scroll through hundreds of gig postings offered on Gigstarter</Col>
+            </Col>
             <Col><img src={Marco} alt="marcoPotrait" width="200px" />
             <h3>Marco Garza</h3>
-            If you show interest in a gig, contact the employer to discover the details of the job.</Col>
+            </Col>
             <Col><img src={Alex} alt="alexPotrait" width="200px" />
             <h3>Alex Lam</h3>
-            Get paid for the work you have done! Aside from the extra money, you have now expanded your resume in a positive and professional direction.</Col>
+            </Col>
             <Col><img src={Oscar} alt="oscarPotrait" width="200px" />
             <h3>Oscar Aguayo</h3>
-            Scroll through hundreds of gig postings offered on Gigstarter</Col>
+            </Col>
           </Row>
         </div>
       </div>
