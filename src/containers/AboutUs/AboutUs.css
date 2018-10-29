@@ -1,27 +1,33 @@
 .Container{
-    margin-top: 56px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-  }
+  margin-top: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+h3{
+  align-content: center !important;
+  text-align: center !important;
+
+}
 
 .Header{
-    margin-top: 56px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 9%;
-    color: white;
-    background-image: url(../../assets/bottomback.svg);
-    background-repeat: no-repeat;
-    background-color: transparent;
-    background-attachment: fixed;
-    background-position: left top;
-    background-size: 100vw;
-    width: 100vw;
-    height: 33vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  margin-top: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 9%;
+  color: white;
+  background-image: url(../../assets/bottomback.svg);
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-attachment: fixed;
+  background-position: left top;
+  background-size: 100vw;
+  width: 100vw;
+  height: 33vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
