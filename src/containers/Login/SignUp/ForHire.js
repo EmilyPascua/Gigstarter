@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import styles from './ForHire.css'
 import Navbar from '../../../components/Navbar/Navbar'
 import Card from 'react-bootstrap/lib/Card'

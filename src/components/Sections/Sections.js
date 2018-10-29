@@ -31,10 +31,10 @@ const Sections = () => {
             <h1>The Best Career Building Platform</h1>
             <p>
               Gigstarter is aimed to provide professional experiences within the
-              field that college students are studying. Our team has  an extensive
-              student-interview record and 87% have claimed they feel
-              unprepared for the workforce due to their lack of practical experience
-              outside of the classroom.
+              field that college students are studying. Our team has an
+              extensive student-interview record and 87% have claimed they feel
+              unprepared for the workforce due to their lack of practical
+              experience outside of the classroom.
             </p>
           </Col>
           <Col className={styles.Sec1Col1} xs={2}>
@@ -247,7 +247,7 @@ const Sections = () => {
                 <p>Gigstarter</p>
               </div>
             </Col>
-            <Col className={styles.FooterAbout} style={{ textAlign: 'right' }}>  
+            <Col className={styles.FooterAbout} style={{ textAlign: 'right' }}>
               <h1>ABOUT US</h1>
               <br />
               <p>
@@ -266,7 +266,16 @@ const Sections = () => {
             </Col>
           </Row>
           <Row className={styles.FooterBottom}>
-            <Col>© 2018 Gigstarter Inc.</Col>
+            <Col>
+              © 2018 Gigstarter Inc. By using this site, you agree to our{' '}
+              <a href="https://docs.google.com/document/d/1wV2m-C5OYNqIvnf6fk-gLQOlFYPT5JrrICvxixWRnzg/edit?usp=sharing">
+                terms 
+              </a>
+              &
+              <a href="https://docs.google.com/document/d/1xAFWFhOvvpbSW7lG7RTIrxwBH38kgVALVyco0Xx2kBg/edit?usp=sharing">
+                private policy.
+              </a>
+            </Col>
             <Col
               className={styles.FooterStuff}
               style={{ textAlign: 'right' }}
