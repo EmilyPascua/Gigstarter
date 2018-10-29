@@ -45,4 +45,9 @@
   .NavbarCustom {
     width: 100vw !important;
   }
+  .NavItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
