@@ -28,7 +28,7 @@ class About extends Component {
         <div className={styles.Container}>
         <Row>
           <Col>
-            Gigstarter provides an opportunity for students to gain the practical experience<br></br> needed to excel in their field. Our one-of-a-kind search engine allows students <br></br>to filter through hundreds of gig opportunities to find the perfect ones for you.          </Col>
+            Gigstarter provides an opportunity for students to gain the practical experience<br></br> needed to excel in their field. Our one-of-a-kind search engine allows students <br></br>to filter through gig opportunities to find the perfect ones for you.          </Col>
         </Row>
         </div>
         <br></br>
