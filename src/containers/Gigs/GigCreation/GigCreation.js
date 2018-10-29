@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Navbar from '../../../components/Navbar/Navbar'
 
 import Container from 'react-bootstrap/lib/Container'
+import TinyMCE from 'react-tinymce'
+import sanitizeHtml from 'sanitize-html-react'
 
 import {
   Card,
@@ -30,7 +32,8 @@ class Gigs extends Component {
     this.state = {
       startDate: moment(),
       endDate: moment(),
-      isBusiness: false
+      isBusiness: false,
+      description: null
     }
     this.handleChange = this.handleChange.bind(this)
   }
@@ -69,13 +72,17 @@ class Gigs extends Component {
     })
   }
 
+  handleEditorChange = (e) => {
+    this.setState({description: e.target.getContent()})
+  }
+
   submit = () => {
     const data = {
       title: document.getElementById('gigName').value,
       major: document.getElementById('prefMajors').value,
       industry: 'N/A',
       payout: parseInt(document.getElementById('gigPayout').value, 10),
-      description: document.getElementById('gigDescription').value,
+      description: sanitizeHtml(this.state.description),
       location: document.getElementById('gigLocation').value,
       startDate: document.getElementById('startDate').value,
       endDate: document.getElementById('endDate').value,
@@ -134,10 +141,17 @@ class Gigs extends Component {
                 <br />
                 <br />
                 <b>Description</b>
-                <Form.Control
-                  id="gigDescription"
-                  type="gigDescription"
-                  placeholder="Gig Description"
+                <TinyMCE
+                  content=""
+                  config={{
+                    plugins: 'autolink link lists preview wordcount',
+                    selector: 'textarea',
+                    fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt',
+                    toolbar:
+                      'undo redo | bold italic | fontsizeselect | alignleft aligncenter alignright'
+                      
+                  }}
+                  onChange={this.handleEditorChange}
                 />
                 <br />
                 <br />
@@ -192,8 +206,8 @@ class Gigs extends Component {
                     <InputGroup.Text>.00</InputGroup.Text>
                   </InputGroup.Append>
                 </InputGroup>
-                <br/>
-                <br/>
+                <br />
+                <br />
                 <b>Address</b>
                 <Form.Control
                   id="address1"
