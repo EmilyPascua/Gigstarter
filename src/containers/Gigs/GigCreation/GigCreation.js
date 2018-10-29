@@ -84,8 +84,8 @@ class Gigs extends Component {
         10
       ),
       desiredSkills: document.getElementById('gigSkills').value,
-      address1: '123 Fake St',
-      address2: 'Apt #203',
+      address1: document.getElementById('address1').value,
+      address2: '',
       city: 'Los Angeles',
       state: 'CA',
       zip: '90001',
@@ -192,6 +192,14 @@ class Gigs extends Component {
                     <InputGroup.Text>.00</InputGroup.Text>
                   </InputGroup.Append>
                 </InputGroup>
+                <br/>
+                <br/>
+                <b>Address</b>
+                <Form.Control
+                  id="address1"
+                  type="text"
+                  placeholder="123 Main St"
+                />
                 <br />
                 <br />
                 <b>Location</b>
