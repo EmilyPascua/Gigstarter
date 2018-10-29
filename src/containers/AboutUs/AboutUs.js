@@ -9,6 +9,8 @@ import Marco from '../../assets/teamPictures/marco.png';
 import Martin from '../../assets/teamPictures/martin.png';
 import Oscar from '../../assets/teamPictures/oscar.png';
 
+import Team from '../../assets/team.jpg'
+
 
 class About extends Component {
   render() {
@@ -66,6 +68,11 @@ class About extends Component {
             </Col>
           </Row>
         </div>
+        <br/>
+        <h1>Engineering Team</h1>
+        <p>From developing new features to designing the layouts, the engineering team is always working hard to provide you with the best experience.</p>
+        <Row><Col><img src={Team} alt="team" width="50%"/></Col></Row>
+        <p>From left to right: Emily, Alex, Lisa, Oscar, Calvin, Martin, Marco</p>
       </div>
     );
   }
