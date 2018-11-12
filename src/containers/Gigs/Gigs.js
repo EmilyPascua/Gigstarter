@@ -142,7 +142,7 @@ class Gigs extends Component {
     const options = {
       tokenize: true,
       threshold: 0.1,
-      keys: ['jobTitle', 'jobCompany', 'jobSkills', 'jobDes']
+      keys: ['jobTitle', 'jobCompany', 'jobSkills', 'jobDes', 'jobMajor']
     }
     const fs = new Fuse(this.state.gigObjsOriginal, options)
     const orig = this.state.gigObjsOriginal
@@ -342,7 +342,7 @@ class Gigs extends Component {
                 </div>
                 <hr />
                 <p className={styles.JobDate}>
-                  {this.state.currentGig.jobStart} -{' '}
+                  {this.state.currentGig.jobStart} -
                   {this.state.currentGig.jobEnd}
                 </p>
                 <p className={styles.GigDescription}>

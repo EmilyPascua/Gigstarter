@@ -84,7 +84,7 @@ const Sections = () => {
               title="gigeconomy"
               width="640"
               height="360"
-              src="https://www.youtube.com/embed/ul2Jieu8Pto"
+              src="https://www.youtube.com/embed/LgdjjxWaAlk"
               frameborder="0"
               allow="autoplay; encrypted-media"
               allowfullscreen
@@ -267,7 +267,7 @@ const Sections = () => {
           </Row>
           <Row className={styles.FooterBottom}>
             <Col>
-              © 2018 Gigstarter Inc. By using this site, you agree to our{' '}
+              © 2018 Gigstarter Inc. By using this site, you agree to our
               <a href="https://docs.google.com/document/d/1wV2m-C5OYNqIvnf6fk-gLQOlFYPT5JrrICvxixWRnzg/edit?usp=sharing">
                 terms 
               </a>
