@@ -1,0 +1,46 @@
+.Card {
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 7px 14px 0 rgba(0,0,0,.15);
+  margin: 10vh 15px 15px 15px;
+  height: auto;
+  padding: 20px;
+  font-family: 'Open Sans';
+}
+
+.Title {
+  text-align: left;
+  font-size: 1.4em;
+  color: #370080;
+  font-weight: bold;
+}
+
+.JobContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0 0 0;
+}
+
+.Left {
+  width: 100%;
+}
+
+.Name {
+  font-weight: bold;
+}
+
+.Location {
+  font-style: italic;
+}
+
+.Date {
+  color: #909090;
+}
+
+.Des {
+  text-align: left;
+  border-left: 1px solid #d7d7d7;
+  padding-left: 15px;
+}

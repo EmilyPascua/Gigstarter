@@ -1,0 +1,48 @@
+.Card {
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 7px 14px 0 rgba(0,0,0,.15);
+  margin: 10vh 15px 15px 15px;
+  height: auto;
+}
+
+.Title {
+  text-align: left;
+  font-size: 1.3em;
+}
+
+.JobContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.Left {
+  display: flex;
+  flex-direction: row;
+}
+
+.CompanyInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.CompanyImg {
+  width: 64px;
+}
+
+.CompanyContainer {
+  box-shadow: 0 7px 14px 0 rgba(0,0,0,.15);
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border-radius: 15px;
+  width: auto;
+  padding: 10px 20px 10px 20px;
+  margin: 20px;
+}
+
+.Comment {
+  margin: auto 0 auto 0;
+}
