@@ -5,15 +5,14 @@
 }
 
 .CardContainer {
-  margin: 0 15vw 0 15vw;
   top: 0;
   position: absolute;
+  overflow: scroll;
+  height: 100vh;
 }
 
 .Container {
-  background-image: url(../../assets/userback.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 40vh;
+  height: 100vh;
+  background-color: rgb(247, 247, 247);
+  overflow: scroll;
 }

@@ -3,6 +3,7 @@ import styles from './Card.css'
 import ProfileImg from '../../../assets/user.svg'
 import Pin from '../../../assets/mappin.svg'
 import Badge from 'react-bootstrap/lib/Badge'
+import Star from '../../../assets/star.svg'
 
 const Card = () => {
   return (
@@ -18,7 +19,7 @@ const Card = () => {
               Los Angeles
             </div>
           </div>
-          <div>43 stars</div>
+          <div className={styles.StarCount}>43 <img src={Star} className={styles.Star} alt="pin" width="15px" /></div>
         </div>
       </div>
       <div className={styles.Right}>

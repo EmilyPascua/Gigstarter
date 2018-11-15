@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
-import background from '../../assets/userback.png'
+import background from '../../assets/userback.svg'
 import styles from './UserProfile.css'
 import CardOne from '../../components/Profile/Card/Card'
 import CardTwo from '../../components/Profile/Experience/Experience'
