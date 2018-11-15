@@ -19,12 +19,18 @@ const Feedback = () => {
               />
             </div>
             <div className={styles.CompanyInfo}>
-              <div>Dragon Industries</div>
-              <div>Los Angeles</div>
+              <div className={styles.CompName}>Dragon Industries</div>
+              <div className={styles.CompLoc}>Los Angeles</div>
             </div>
           </div>
         </div>
-        <div className={styles.Comment}>"Calvin was great"</div>
+        <div className={styles.Comment}>
+          "Calvin was great. He exceeded in the roles given to him."
+          <div className={styles.Subtitle}>
+            - for being a <span className={styles.SubtitleTime}>Web Developer</span>{' '} for {' '}
+            <span className={styles.SubtitleTime}>2 weeks</span>
+          </div>
+        </div>
       </div>
     </div>
   )
